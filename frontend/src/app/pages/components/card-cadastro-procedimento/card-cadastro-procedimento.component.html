@@ -1,0 +1,24 @@
+<div class="container-cadastro-especialidade">
+    <div class="title-cadastro-especialidade">
+      <h2>CADASTRO DE PROCEDIMENTOS</h2>
+    </div>
+  
+    <div class="cadastro-especialidade-hr">
+      <hr/>
+    </div>
+  
+  
+    <div class="cadastro-especialidade-inputs">
+      <form #myFrom="ngForm">
+        <ul>
+          <li>
+            <div class="input-nome">
+              <input type="text" name="nome" placeholder="Nome" class="nome" [(ngModel)]="nome" required>
+            </div>
+          </li>
+        </ul>
+        <div class="btn-cadastrar"><a class (click)="cadastrar()"><span>CADASTRAR</span></a></div>
+      </form>
+    </div>
+  </div>
+  

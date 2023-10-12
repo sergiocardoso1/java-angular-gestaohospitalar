@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Sérgio Cardoso",
+    "email": "sergioCardoso",
+    "ativo": true,
+    "dataDeNascimento": "26/04/1998"
+  },
+  {
+    "id": 2,
+    "name": "Anete Vieira",
+    "email": "sergioCardoso",
+    "ativo": false,
+    "dataDeNascimento": "26/04/1998"
+  }
+]

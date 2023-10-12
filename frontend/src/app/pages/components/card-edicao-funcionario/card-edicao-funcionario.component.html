@@ -1,0 +1,113 @@
+<div class="container-card-cadastro-aluno">
+    <div class="title-cadastro-aluno">
+      <h2>EDIÇÃO DE FUNCIONARIO</h2>
+    </div>
+  
+    <div class="cadastro-aluno-hr">
+      <hr/>
+    </div>
+  
+    <div class="cadastro-aluno-inputs">
+      <form #myFrom="ngForm">
+        <ul>
+          <li>
+            <div class="input-nome">
+              <input type="text" name="nome" placeholder="Nome" class="nome" [(ngModel)]="nome">
+            </div>
+          </li>
+          <li>
+            <div class="input-email">
+              <input type="text" name="email" placeholder="Email" class="email" [(ngModel)]="email">
+            </div>
+          </li>
+          <li>
+            <div class="input-telefone">
+              <input type="text" name="telefone" placeholder="Telefone" class="telefone" [(ngModel)]="telefone">
+            </div>
+          </li>
+          <li>
+            <div class="input-data-nascimento">
+              <input type="date" name="dataNascimento" placeholder="Data de Admisao" class="dataNascimento" [(ngModel)]="dataDeAdmissao">
+            </div>
+          </li>
+          <li>
+            <div class="input-data-nascimento">
+              <input type="date" name="dataDeDemissao" placeholder="Data de Demissao" class="dataNascimento" [(ngModel)]="dataDeDemissao">
+            </div>
+          </li>
+          <li>
+            <div class="select-perfil" >
+                <select [(ngModel)]="perfilSelecionado" name="perfilSelecionado">
+                    <option value="-1" disabled>Perfil</option>
+                    <option *ngFor="let perfil of tipoPerfilMap.entries()" [value]="perfil[1]">
+                      {{ perfil[0] }}
+                    </option>
+                </select>
+            </div>
+          </li>
+          <li>
+            <div class="input-cpf" *ngIf="perfilSelecionado == 2">
+              <input type="text" name="crm" placeholder="CRM" class="crm" [(ngModel)]="crm">
+            </div>
+          </li>
+          <li>
+            <div class="select-especialidade" *ngIf="perfilSelecionado == 2">
+              <select [(ngModel)]="especialidadeSelecionada" name="especialidadeSelecionada">
+                <option value="-1" disabled>Especialidade</option>
+                <option *ngFor="let especialidades of especialidade" [value]="especialidades.id">
+                  {{ especialidades.nome }}
+                </option>
+              </select>
+            </div>
+          </li>
+          <li>
+            
+            <div class="inputs-title-endereco">
+              <h3>ENDEREÇO</h3>
+            </div>
+          </li>
+          <li>
+            <div class="input-cep">
+              <form [formGroup]="cepForm">
+                <input type="text" name="cepText" [(ngModel)]="cepText" required placeholder="CEP" class="cep" formControlName="numericInput">
+              </form>
+              <div class="btn-cep"><a class (click)="buscarCep()"><span>BUSCAR</span></a></div>
+            </div>
+          </li>
+          <li>
+            <div class="input-logradouro">
+              <input type="text" name="logradouro" placeholder="Logradouro" class="logradouro" [(ngModel)]="logradouro">
+            </div>
+          </li>
+          <li>
+            <div class="input-numero">
+              <input type="text" name="numero" placeholder="Número" class="numero" [(ngModel)]="numero">
+            </div>
+          </li>
+          <li>
+            <div class="input-complemento">
+              <input type="text" name="complemento" placeholder="Complemento" class="complemento" [(ngModel)]="complemento">
+            </div>
+          </li>
+          <li>
+            <div class="input-bairro">
+              <input type="text" name="bairro" placeholder="Bairro" class="bairro" [(ngModel)]="bairro" >
+            </div>
+          </li>
+          <li>
+            <div class="input-cidade">
+              <input type="text" name="cidade" placeholder="Cidade" class="cidade"  [(ngModel)]="cidade">
+            </div>
+          </li>
+          <li>
+            <div class="input-complemento">
+              <input type="text" name="estado" placeholder="Estado" class="estado"  [(ngModel)]="estado">
+            </div>
+          </li>
+        </ul>
+        <div class="btn-cadastrar"><a class (click)="editar()"><span>CADASTRAR</span></a></div>
+      </form>
+    </div>
+  
+  </div>
+  

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
+	<link href="./css/style.login.css" rel="stylesheet" />
+	<link rel="icon" href="imagens/logomenu.png">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container-login">
+		<div id="mensagemErro" class="alert alert-danger" th:if="${mensagemErro}">
+			<p th:text="${mensagemErro}"></p>
+		</div>
+
+
+
+		<div class="caixa-login">
+			<div class="title">
+				<h5>HP System</h5>
+			</div>
+			<!-- Adicione um formulário com ação para enviar os dados para o servidor -->
+			<form action="/logar" method="POST">
+				<div class="input-field">
+					<!-- Use os atributos "name" para identificar os campos de email e senha -->
+					<input type="text" name="email" class="validate-nome" placeholder="Digite o usuário">
+					<input type="password" name="senha" class="validate-senha" placeholder="Digite a senha">
+				</div>
+				<div class="btns-login">
+					<!-- Use um botão de tipo "submit" para enviar o formulário -->
+					<button class="btn btn-primary" type="submit">Entrar</button>
+				</div>
+			</form>
+			<div class="btns-utils">
+				<a class="btn-esqueceusenha" href="/esqueceusenha">Esqueceu a senha?</a>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+</html>

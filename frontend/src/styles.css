@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Segoe UI';
+  list-style-type: none;
+
+}
+
+html{
+  min-height: 100%;
+  background-size: cover;
+  background-color: #ffffff;
+  background-image: linear-gradient(147deg, #ffffff 0%, #486fb8c4 100%);
+
+
+}

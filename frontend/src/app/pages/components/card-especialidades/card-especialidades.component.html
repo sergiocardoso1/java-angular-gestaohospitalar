@@ -1,0 +1,36 @@
+<div class="container-card-especialidades">
+
+    <div class="card-especialidades-title">
+      <h2>ESPECIALIDADES</h2>
+    </div>
+  
+    <div class="especialidades-hr">
+      <hr/>
+    </div>
+  
+    <div class="especialidades-criar">
+      <a [routerLink]="['/especialidades/cadastro']"><span>CADASTRAR</span></a>
+    </div>
+  
+    <div class="card-especialidades">
+      <ul>
+        <li *ngFor="let a of especialidades">
+          <div class="especialidades" >
+            <a class="especialidades-nome" >
+              <h3>{{ a.nome }}</h3>
+              <div class="especialidades-delete">
+                <a (click)="deletePlano(a.id)"><span>APAGAR</span></a>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li *ngIf="especialidades.length === 0">
+          <div class="card-especialidades-nao-cadastrado" >
+            <h3>Nenhuma especialidade cadastrada</h3>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+  </div>
+  

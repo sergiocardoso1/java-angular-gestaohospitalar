@@ -1,0 +1,17 @@
+<div class="container-login">
+  <div class="caixa-login">
+    <div class="title">
+      <h5>SIIT</h5>
+    </div>
+
+    <div class="input-field">
+      <input [(ngModel)]="email" type="text" class="validate-nome" placeholder="Email">
+    </div>
+    <div class="btns-login">
+      <div class="btn-login"><a (click)="fazerLogin()"><span>RECUPERAR</span></a></div>
+    </div>
+    <div class="btns-utils">
+      <a class="btn-esqueceusenha" [routerLink]="['/login']">VOLTAR</a>
+    </div>
+  </div>
+</div>

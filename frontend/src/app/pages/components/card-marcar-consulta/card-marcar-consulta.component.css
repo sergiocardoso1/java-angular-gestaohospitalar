@@ -1,0 +1,96 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    max-width: 95%;
+}
+.card-especialidades-title{
+    margin-bottom: 20px;
+  }
+  
+.card-especialidades-title > h2{
+color: rgb(26, 25, 25);
+display: flex;
+align-items: center;
+font-size: 30px;
+font-weight: 900;
+font-family: cursive;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.especialidades-hr{
+margin-bottom: 20px;
+width: 100%;
+}
+.quebra{
+    width: 40%;
+    height: 2px;
+    background-color: black;
+    margin-top: 25px;
+}
+
+.container-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.info-horario{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    border: 0;
+}
+.horario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.horarios{
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    
+}
+.botao-marcar{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    cursor: pointer;
+}
+.info-horario button{
+    width: 25%;
+    margin-top: 30px;
+    border-radius: 6px; 
+    color: white;
+    background-color: cornflowerblue;  
+    border-color:cornflowerblue;
+    height: 25px;   
+    font-size: 14px;
+}
+@media (max-width:768px){
+    .info-data{
+        width: 60%;
+    }
+    .info-horario{
+        width: 60%;
+    }
+    .quebra{
+        width: 70%;
+    }
+}

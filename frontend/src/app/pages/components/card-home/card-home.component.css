@@ -1,0 +1,40 @@
+*{
+  font-family: cursive;
+}
+
+.card-home-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 98%;
+  margin-bottom: 20%;
+  
+}
+
+.card-home-nome-empresa{
+  margin-bottom: 20px;
+}
+
+.card-home-nome-empresa > h2{
+  font-size: 30px;
+  font-weight: 900;
+  color:  rgb(0, 89, 255);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+.card-home-hr{
+  margin-bottom: 25px;
+}
+
+app-card-info{
+  margin-bottom: 25px;
+}
+
+.card-home-card-info{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+

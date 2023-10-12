@@ -1,0 +1,92 @@
+<div class="container-card-cadastro-aluno">
+    <div class="title-cadastro-aluno">
+      <h2>EDIÇAO DO PACIENTE {{nome}}</h2>
+    </div>
+  
+    <div class="cadastro-aluno-hr">
+      <hr/>
+    </div>
+  
+    <div class="cadastro-aluno-inputs">
+      <form #myFrom="ngForm">
+        <ul>
+          <li>
+            <div class="input-nome">
+              <input type="text" name="nome" placeholder="Nome" class="nome" [(ngModel)]="nome">
+            </div>
+          </li>
+          <li>
+            <div class="input-email">
+              <input type="text" name="email" placeholder="Email" class="email" [(ngModel)]="email">
+            </div>
+          </li>
+          <li>
+            <div class="input-telefone">
+              <input type="text" name="telefone" placeholder="Telefone" class="telefone" [(ngModel)]="telefone">
+            </div>
+          </li>
+          <li>
+            <div class="input-cpf">
+              <input type="text" name="cpf" placeholder="CPF" class="cpf" [disabled]="true" [(ngModel)]="cpf">
+            </div>
+          </li>
+          <li>
+            <div class="input-telefone">
+              <input type="text" name="convenio" placeholder="Convênio" class="convenio" [(ngModel)]="convenio">
+            </div>
+          </li>
+          <li>
+            <div class="input-data-nascimento">
+              <input type="date" name="dataNascimento" placeholder="Data de Nascimento" class="dataNascimento" [(ngModel)]="dataDeNascimento">
+            </div>
+          </li>
+          <li>
+            <div class="inputs-title-endereco">
+              <h3>ENDEREÇO</h3>
+            </div>
+          </li>
+          <li>
+            <div class="input-cep">
+              <form [formGroup]="cepForm">
+                <input type="text" name="cepText" [(ngModel)]="cepText" required placeholder="CEP" class="cep" formControlName="numericInput">
+              </form>
+              <div class="btn-cep"><a class (click)="buscarCep()"><span>BUSCAR</span></a></div>
+            </div>
+          </li>
+          <li>
+            <div class="input-logradouro">
+              <input type="text" name="logradouro" placeholder="Logradouro" class="logradouro" [(ngModel)]="logradouro">
+            </div>
+          </li>
+          <li>
+            <div class="input-numero">
+              <input type="text" name="numero" placeholder="Número" class="numero" [(ngModel)]="numero">
+            </div>
+          </li>
+          <li>
+            <div class="input-complemento">
+              <input type="text" name="complemento" placeholder="Complemento" class="complemento" [(ngModel)]="complemento">
+            </div>
+          </li>
+          <li>
+            <div class="input-bairro">
+              <input type="text" name="bairro" placeholder="Bairro" class="bairro" [(ngModel)]="bairro" >
+            </div>
+          </li>
+          <li>
+            <div class="input-cidade">
+              <input type="text" name="cidade" placeholder="Cidade" class="cidade"  [(ngModel)]="cidade">
+            </div>
+          </li>
+          <li>
+            <div class="input-complemento">
+              <input type="text" name="estado" placeholder="Estado" class="estado"  [(ngModel)]="estado">
+            </div>
+          </li>
+        </ul>
+        <div class="btn-cadastrar"><a (click)="editar()"><span>EDITAR</span></a></div>
+      </form>
+    </div>
+  
+  </div>
+  

@@ -1,0 +1,98 @@
+
+<div class="container-selecao-paciente">
+    <div class="selecao-paciente-title">
+      <h3>FUNCIONARIO</h3>
+      <hr/>
+    </div>
+  
+    <div class="display-selecao-paciente">
+  
+      <div class="exib-paciente">
+  
+        <div class="selecao-paciente-nome">
+          <h4>Nome: </h4>
+          <p>{{ funcionario.nome }}</p>
+        </div>
+        <div class="selecao-paciente-email">
+          <h4>Email: </h4>
+          <p>{{ funcionario.email }}</p>
+        </div>
+        <div class="selecao-paciente-email">
+          <h4>CPF: </h4>
+          <p>{{ funcionario.cpf }}</p>
+        </div>
+        <div class="selecao-telefone">
+          <h4>Telefone: </h4>
+          <p>{{ funcionario.telefone }}</p>
+        </div>
+        <div class="selecao-telefone">
+            <h4>Perfil: </h4>
+            <p>{{ funcionario.perfis }}</p>
+        </div>
+        <div class="selecao-paciente-dataNascimento">
+          <h4>Data de admissão: </h4>
+          <p>{{ funcionario.dataDeAdmissao }}</p>
+        </div>
+        <div class="selecao-paciente-dataNascimento" *ngIf="funcionario.dataDeDemissao != null">
+            <h4>Data de demissao: </h4>
+            <p>{{ funcionario.dataDeAdmissao }}</p>
+        </div>
+        <div class="selecao-telefone" *ngIf="funcionario.crm != null">
+          <h4>CRM: </h4>
+          <p>{{ funcionario.crm }}</p>
+        </div>
+        <div class="selecao-telefone" *ngIf="funcionario.crm != null">
+          <h4>Especialidade: </h4>
+          <p>{{ funcionario.especialidade.nome}}</p>
+        </div>
+        
+  
+        <div class="selecao-paciente-endereco">
+          <h4>ENDEREÇO</h4>
+          <hr/>
+          <div class="endereco-logradouro">
+            <h4>Logradouro: </h4>
+            <p>{{ funcionario.endereco.logradouro }}</p>
+          </div>
+          <div class="endereco-numero">
+            <h4>Número: </h4>
+            <p>{{ funcionario.endereco.numero }}</p>
+          </div>
+          <div class="endereco-cep">
+            <h4>Cep: </h4>
+            <p>{{ funcionario.endereco.cep }}</p>
+          </div>
+          <div class="endereco-bairro">
+            <h4>Bairro: </h4>
+            <p>{{ funcionario.endereco.bairro }}</p>
+          </div>
+          <div class="endereco-complemento">
+            <h4>Complemento: </h4>
+            <p>{{ funcionario.endereco.complemento }}</p>
+          </div>
+          <div class="endereco-estado-nome">
+            <h4>Estado: </h4>
+            <p>{{ funcionario.endereco.cidade.estado.nome }}</p>
+          </div>
+          <div class="endereco-estado-nome">
+            <h4>Cidade: </h4>
+            <p>{{ funcionario.endereco.cidade.nome }}</p>
+          </div>
+  
+        </div>
+      </div>
+  
+      <div class="btns">
+        <div class="paciente-btns">
+          <div class="btn-paciente-editar">
+            <a [routerLink]="['/funcionarios',funcionario.id,'editar']"><span>EDITAR</span></a>
+          </div>
+          <div class="btn-paciente-excluir">
+            <a (click)="deleteAluno(funcionario.id)"><span>EXCLUIR</span></a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

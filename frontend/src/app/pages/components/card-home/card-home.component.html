@@ -1,0 +1,19 @@
+<div class="card-home-container">
+  <div class="card-home">
+    <div class="card-home-nome-empresa">
+      <h2>{{ title }}</h2>
+    </div>
+
+    <div class="card-home-hr">
+      <hr/>
+    </div>
+
+    <div class="card-home-card-info">
+      <app-card-info [cardQtd]="alunosCadastrados" cardText="Pacientes"></app-card-info>
+      <app-card-info [cardQtd]="alunosAtivos" cardText="Medicos"></app-card-info>
+      <app-card-info [cardQtd]="planosCadastrados" cardText="Consultas hoje"></app-card-info>
+      <app-card-info [cardQtd]="planosCadastrados" cardText="Procedimentos hoje"></app-card-info>
+    </div>
+  </div>
+
+</div>

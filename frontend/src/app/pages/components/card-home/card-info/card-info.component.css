@@ -1,0 +1,85 @@
+*{
+  font-family: cursive;
+}
+
+
+.card-info-container{
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  max-width: 95%;
+  position: relative;
+  
+  
+  
+  
+}
+
+.card-info-nome-empresa > h2{
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(26, 25, 25);
+}
+
+.card-info-card-info{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70%;
+  height: 400px;
+  margin-top: 30px;
+
+}
+
+.card-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 300px;
+  height: 175px;
+  margin-right: 20px;
+  border-radius: 7px;
+  background-color: rgb(60, 123, 240);
+  cursor: default;
+
+}
+
+.card-info-img > img{
+  height: 60px;
+  width: auto;
+  margin-top: 50px;
+  margin-left: 20px;
+  color: white;
+  font-size: 30px;
+
+}
+
+.card-info-text{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  color: white;
+  margin-right: 30px;
+  margin-left: auto;
+}
+
+.card-info-text > h3{
+  display: flex;
+  justify-content: right;
+  margin-bottom: 25px;
+  font-size: 50px;
+}
+
+.card-info-text > p{
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+  align-items: center;
+
+}
+
+.card-info-container:hover{
+  position: relative;
+  top: 1px;
+}

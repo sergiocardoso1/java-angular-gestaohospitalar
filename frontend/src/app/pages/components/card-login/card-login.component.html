@@ -1,0 +1,18 @@
+<div class="container-login">
+  <div class="caixa-login">
+    <div class="title">
+      <h5>SIIT</h5>
+    </div>
+
+    <div class="input-field">
+      <input [(ngModel)]="email" type="text" class="validate-nome" placeholder="Email">
+      <input [(ngModel)]="senha" type="password" class="validate-senha" placeholder="Password">
+    </div>
+    <div class="btns-login">
+      <div class="btn-login"><a (click)="fazerLogin()"><span>ENTRAR</span></a></div>
+    </div>
+    <div class="btns-utils">
+      <a class="btn-esqueceusenha" [routerLink]="['/recuperarsenha']">Esqueceu a senha?</a>
+    </div>
+  </div>
+</div>

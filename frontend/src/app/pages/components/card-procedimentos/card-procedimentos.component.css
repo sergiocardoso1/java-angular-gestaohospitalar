@@ -1,0 +1,182 @@
+.container-card-especialidades{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 95%;
+  }
+  
+  .card-especialidades-title{
+    margin-bottom: 20px;
+  }
+  
+  .card-especialidades-title > h2{
+    color: rgb(26, 25, 25);
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 900;
+    font-family: cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .especialidades-hr{
+    margin-bottom: 20px;
+  }
+  
+  .especialidades-criar{
+    margin-bottom: 20px;
+  }
+  
+  .especialidades-criar > a{
+    display: flex;
+    width: 130px;
+    height: 25px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #333;
+    letter-spacing: 2px;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    transition: all .35s;
+    margin-right: 7px;
+    border-radius: 3px;
+  }
+  
+  .especialidades-criar > a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .especialidades-criar > a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #349706;
+    transition: all .35s;
+  }
+  
+  .especialidades-criar > a:hover{
+    color: #fff;
+  }
+  
+  .especialidades-criar > a:hover:after{
+    width: 100%;
+  }
+  
+  
+  .especialidades-hr{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .card-especialidades{
+    border: 1px solid black;
+  }
+
+  .especialidades-planos{
+    width: 50%;
+  
+  }
+  
+  .especialidades-planos > ul > li{
+    border-radius: 3px;
+    border: 1px solid rgb(26, 25, 25);
+    margin-bottom: 5px;
+  }
+
+  
+  .especialidades > a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: 0.1px solid rgb(26, 25, 25);
+    color: rgb(26, 25, 25);
+    gap: 1rem;
+
+  
+  }
+  
+  .especialidades > a > h3 {
+    margin-left: 5px;
+  }
+  
+  .especialidades > a:hover{
+  
+    background-color: rgb(190, 203, 236);
+    position: relative;
+    transition: all .35s;
+    top: 1px;
+  }
+
+
+  
+  .especialidades-delete > a{
+    display: flex;
+    width: 90px;
+    height: 25px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #333;
+    letter-spacing: 2px;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    transition: all .35s;
+    margin-right: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .especialidades-delete > a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .especialidades-delete > a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #971706;
+    transition: all .35s;
+  }
+  
+  .especialidades-delete > a:hover{
+    color: #fff;
+  }
+  
+  .especialidades-delete > a:hover:after{
+    width: 100%;
+  }
+  
+  .card-especialidades-nao-cadastrado{
+    background-color: rgb(243, 170, 170);
+    border: 1px solid rgb(105, 14, 7);
+  }
+  
+  .card-especialidades-nao-cadastrado > h3{
+    padding: 5px;
+    font-weight: 500;
+  }
+  
+  
+  

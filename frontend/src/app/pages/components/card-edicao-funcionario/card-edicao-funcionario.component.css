@@ -1,0 +1,192 @@
+.container-card-cadastro-aluno{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .title-cadastro-aluno{
+    margin-bottom: 20px;
+  }
+  
+  
+  .title-cadastro-aluno > h2{
+    color: rgb(26, 25, 25);
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 900;
+    font-family: cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .cadastro-aluno-hr{
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .cadastro-aluno-inputs > form > ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .cadastro-aluno-inputs > form > ul > li{
+    width: 60%;
+  }
+  
+  input{
+    height: 35px;
+    padding-left: 5px;
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .select-perfil > select{
+    height: 35px;
+    padding-left: 5px;
+    font-size: 18px;
+    width: 40%;
+  }
+
+  .select-especialidade > select{
+    height: 35px;
+    padding-left: 5px;
+    font-size: 18px;
+    width: 40%;
+  }
+  
+  .dataNascimento{
+    width: 200px;
+  }
+  
+  .inputs-title-endereco{
+    margin-top: 25px;
+    margin-bottom: 5px;
+  }
+  
+  .inputs-title-endereco > h3{
+    font-size: 20px;
+  }
+  
+  .input-cep {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 15px;
+  }
+  
+  
+  
+  input.ng-invalid {
+    color: red;
+  }
+  
+  .btn-cep{
+    width: 120px;
+    height: 36px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    font-size: 100%;
+    text-decoration: none;
+    color: #000000;
+    border: 1px solid #575656;
+    letter-spacing: 2px;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    transition: all .35s;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  .btn-cep > a{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  
+  .btn-cep > a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .btn-cep > a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #2d0697;
+    transition: all .35s;
+  }
+  
+  .btn-cep > a:hover{
+    color: #fff;
+  }
+  
+  .btn-cep > a:hover:after{
+    width: 100%;
+  }
+  
+  
+  
+  .btn-cadastrar{
+    margin-top: 15px;
+    width: 130px;
+    height: 35px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000000;
+    border: 1px solid #575656;
+    letter-spacing: 1px;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    transition: all .35s;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  .btn-cadastrar > a{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  
+  .btn-cadastrar > a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .btn-cadastrar > a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #06976b;
+    transition: all .35s;
+  }
+  
+  .btn-cadastrar > a:hover{
+    color: #fff;
+  }
+  
+  .btn-cadastrar > a:hover:after{
+    width: 100%;
+  }
+  
+  

@@ -1,0 +1,92 @@
+
+<div class="container-selecao-paciente">
+    <div class="selecao-paciente-title">
+      <h3>PACIENTE</h3>
+      <hr/>
+    </div>
+  
+    <div class="display-selecao-paciente">
+  
+      <div class="exib-paciente">
+  
+        <div class="selecao-paciente-nome">
+          <h4>Nome: </h4>
+          <p>{{ paciente.nome }}</p>
+        </div>
+        <div class="selecao-paciente-email">
+          <h4>Email: </h4>
+          <p>{{ paciente.email }}</p>
+        </div>
+        <div class="selecao-paciente-email">
+          <h4>CPF: </h4>
+          <p>{{ paciente.cpf }}</p>
+        </div>
+        <div class="selecao-telefone">
+          <h4>Telefone: </h4>
+          <p>{{ paciente.telefone }}</p>
+        </div>
+        <div class="selecao-telefone">
+            <h4>Convenio: </h4>
+            <p>{{ paciente.convenio }}</p>
+          </div>
+        <div class="selecao-paciente-dataNascimento">
+          <h4>Data de nascimento: </h4>
+          <p>{{ paciente.dataDeNascimento }}</p>
+        </div>
+        
+  
+        <div class="selecao-paciente-endereco">
+          <h4>ENDEREÇO</h4>
+          <hr/>
+          <div class="endereco-logradouro">
+            <h4>Logradouro: </h4>
+            <p>{{ paciente.endereco.logradouro }}</p>
+          </div>
+          <div class="endereco-numero">
+            <h4>Número: </h4>
+            <p>{{ paciente.endereco.numero }}</p>
+          </div>
+          <div class="endereco-cep">
+            <h4>Cep: </h4>
+            <p>{{ paciente.endereco.cep }}</p>
+          </div>
+          <div class="endereco-bairro">
+            <h4>Bairro: </h4>
+            <p>{{ paciente.endereco.bairro }}</p>
+          </div>
+          <div class="endereco-complemento">
+            <h4>Complemento: </h4>
+            <p>{{ paciente.endereco.complemento }}</p>
+          </div>
+          <div class="endereco-estado-nome">
+            <h4>Estado: </h4>
+            <p>{{ paciente.endereco.cidade.estado.nome }}</p>
+          </div>
+          <div class="endereco-estado-nome">
+            <h4>Cidade: </h4>
+            <p>{{ paciente.endereco.cidade.nome }}</p>
+          </div>
+  
+        </div>
+      </div>
+  
+      <div class="btns">
+        <div class="paciente-btns">
+          <div class="btn-paciente-matricula">
+            <a [routerLink]="['/alunos',paciente.id,'matricula']"><span>MATRÍCULA</span></a>
+          </div>
+          <div class="btn-paciente-treino">
+            <a [routerLink]="['/alunos',paciente.id,'fichas']"><span>FICHAS</span></a>
+          </div>
+          <div class="btn-paciente-editar">
+            <a [routerLink]="['/pacientes',paciente.id,'editar']"><span>EDITAR</span></a>
+          </div>
+          <div class="btn-paciente-excluir">
+            <a (click)="deleteAluno(paciente.id)"><span>EXCLUIR</span></a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

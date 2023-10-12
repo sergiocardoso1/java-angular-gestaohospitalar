@@ -1,0 +1,97 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link href="../css/style.exibir.css" rel="stylesheet" />
+	<link rel="icon" href="images/logomenu.png">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+		<a class="navbar-brand" href="#"><img src="../images/logo.png"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">CONSULTAS<span class="sr-only">(Página atual)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/pacientes/listar">PACIENTES</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">RELATÓRIOS</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/especialidades/listar">ESPECIALIDADES</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/funcionarios/listar">FUNCIONÁRIOS</a>
+				</li>
+				
+			</ul>
+		</div>
+	</nav>
+	<fieldset class="container">
+		<div class="info">
+			<h2>Dados do paciente</h2>
+			<div class="options">
+				<button type="button" class="btn btn-primary" id="btn-prontuario">Prontuário</button>
+				<a class="btn btn-light" th:href="@{/pacientes/{id}/atualizar(id=${paciente.id})}">Editar</a>
+				<a class="btn btn-light" th:href="@{/pacientes/{id}/remover(id=${paciente.id})}">Excluir</a>
+			</div>
+		</div>
+		<div class="dados">
+			<img src="../images/paciente.png">
+			<p><b>Nome completo:</b><span th:text="${paciente.nome}"></span></p>
+			<p><b>CPF:</b><span th:text="${paciente.cpf}"></span></p>
+			<p><b>Email:</b><span th:text="${paciente.email}"></span></p>
+			<p><b>Telefone:</b><span th:text="${paciente.telefone}"></span></p>
+			<p><b>Data de nascimento:</b><span th:text="${#dates.format(paciente.dataDeNascimento, 'dd/MM/yyyy')}"></span></p>
+			<p><b>Convênio:</b><span th:text="${paciente.convenio}"></span></p>
+			<p><b>Endereço</b></p>
+			<p><b>Logradouro:</b><span th:text="${paciente.endereco.logradouro}"></span></p>
+			<p><b>Número:</b><span th:text="${paciente.endereco.numero}"></span></p>
+			<p><b>CEP:</b><span th:text="${paciente.endereco.cep}"></span></p>
+			<p><b>Bairro:</b><span th:text="${paciente.endereco.bairro}"></span></p>
+			<p><b>Complemento:</b><span th:text="${paciente.endereco.complemento}"></span></p>
+			
+
+
+
+		</div>
+	</fieldset>
+
+	<div>
+		<a class="btn btn-light" id="btn-voltar" th:href="@{/pacientes/listar}">Voltar</a>
+	</div>
+
+
+
+	<footer class="footer">
+		<p>&copy; 2023, Clinvida</p>
+	</footer>
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>

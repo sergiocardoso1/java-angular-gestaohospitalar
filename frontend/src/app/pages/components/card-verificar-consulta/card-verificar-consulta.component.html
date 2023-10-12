@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="card-especialidades-title">
+        <h2>VERIFICAR CONSULTA</h2>
+      </div>
+    
+      <div class="especialidades-hr">
+        <hr/>
+      </div>
+
+    <div class="container-box">
+        <fieldset class="buscar">
+            <div class="dados">
+                <input type="date" name="data" [(ngModel)]="data">
+                    <select id="especialidade" [(ngModel)]="especialidadeselecionada" name="especialidadeSelecionada">
+                    <option value="-1" disabled>Especialidade</option>
+                    <option *ngFor="let especialidade of especialidades" [value]="especialidade.id">
+                        {{ especialidade.nome }}
+                    </option>
+                    </select>
+            </div>
+            
+    
+            <div class="container-buscar">
+                <button (click)="verificar()" class="consultar">Consultar</button>
+                <button type="submit" class="voltar">Voltar</button>
+            </div>
+    
+        </fieldset>
+    </div>
+    
+</div>

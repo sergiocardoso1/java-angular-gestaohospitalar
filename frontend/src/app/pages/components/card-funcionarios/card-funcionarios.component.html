@@ -1,0 +1,40 @@
+<div class="paciente-container">
+    <div class="paciente-title">
+        <h2>FUNCIONARIOS</h2>
+    </div>
+  
+    <div class="paciente-hr">
+      <hr/>
+    </div>
+  
+    <div class="paciente-cadastrar">
+      <a [routerLink]="['/funcionarios/cadastro']"><span>CADASTRAR</span></a>
+    </div>
+  
+    <div class="paciente-input">
+      <input type="text" [(ngModel)]="nameInput">
+      <div class="paciente-buscar">
+        <a (click)="findName()"><span>BUSCAR</span></a>
+      </div>
+    </div>
+  
+    <div class="paciente-text">
+      <ul>
+        <li *ngFor="let a of funcionarios" >
+            <div class="card-paciente" >
+                <a [routerLink]="['/funcionarios',a.id]">
+                  <h3>{{ a.nome }}</h3>
+                </a>
+            </div>
+        </li>
+        <li *ngIf="funcionarios.length === 0">
+          <div class="card-paciente-nao-cadastrado" >
+            <h3>Nenhum funcionário cadastrado</h3>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+  
+  </div>
+  
