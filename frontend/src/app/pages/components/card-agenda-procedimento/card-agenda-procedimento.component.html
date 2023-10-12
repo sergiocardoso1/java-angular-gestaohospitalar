@@ -1,6 +1,6 @@
 <div class="paciente-container">
     <div class="paciente-title">
-        <h2>CONSULTAS</h2>
+        <h2>PROCEDIMENTOS</h2>
     </div>
   
     <div class="paciente-hr">
@@ -16,18 +16,18 @@
   
     <div class="paciente-text">
       <ul>
-        <li *ngFor="let a of consultas" >
+        <li *ngFor="let a of servicoProcedimento" >
             <div class="card-paciente" >
                 <a [routerLink]="['/pacientes',a.id]">
-                  <h3>Med: {{ a.medico.nome }}</h3>
+                  <h3>Med: {{ a.procedimento.nome }}</h3>
                   <h3>Pac: {{ a.paciente.nome }}</h3>
-                  <h3>Hora: {{ (transform(a.horarioConsulta) | date:'HH:mm') }}</h3>
+                  <h3>Hora: {{ (transform(a.horarioProcedimento) | date:'HH:mm') }}</h3>
                 </a>
             </div>
         </li>
-        <li *ngIf="consultas.length === 0">
+        <li *ngIf="servicoProcedimento.length === 0">
           <div class="card-paciente-nao-cadastrado" >
-            <h3>Nenhuma consulta marcada</h3>
+            <h3>Nenhum procedimento marcado</h3>
           </div>
         </li>
       </ul>

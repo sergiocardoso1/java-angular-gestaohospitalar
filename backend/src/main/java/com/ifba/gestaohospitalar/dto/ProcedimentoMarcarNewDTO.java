@@ -2,7 +2,7 @@ package com.ifba.gestaohospitalar.dto;
 
 public class ProcedimentoMarcarNewDTO {
 
-	private Long ProcedimentoId;
+	private Long procedimentoId;
 	private String dataProcedimento;
 	private String horarioProcedimento;
 	private Long pacienteId;
@@ -13,11 +13,11 @@ public class ProcedimentoMarcarNewDTO {
 	}
 
 	public Long getProcedimentoId() {
-		return ProcedimentoId;
+		return procedimentoId;
 	}
 
 	public void setProcedimentoId(Long procedimentoId) {
-		ProcedimentoId = procedimentoId;
+		this.procedimentoId = procedimentoId;
 	}
 
 	public String getDataProcedimento() {

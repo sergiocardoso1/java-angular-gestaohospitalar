@@ -27,6 +27,11 @@ import { VerificarConsultaModule } from './pages/verificar-consulta/verificar-co
 import { MarcarConsultaModule } from './pages/marcar-consulta/marcar-consulta.module';
 import { CadastroConsultaModule } from './pages/cadastro-consulta/cadastro-consulta.module';
 import { ConsultaModule } from './pages/consulta/consulta.module';
+import { VerificarProcedimentoModule } from './pages/verificar-procedimento/verificar-procedimento.module';
+import { MarcarProcedimentoModule } from './pages/marcar-procedimento/marcar-procedimento.module';
+import { CadastroServicoDeProcedimentoComponent } from './pages/cadastro-servico-de-procedimento/cadastro-servico-de-procedimento.component';
+import { CadastroServicoDeProcedimentoModule } from './pages/cadastro-servico-de-procedimento/cadastro-servico-de-procedimento.module';
+import { AgendaProcedimentoModule } from './pages/agenda-procedimento/agenda-procedimento.module';
 
 @NgModule({
   declarations: [
@@ -59,8 +64,11 @@ import { ConsultaModule } from './pages/consulta/consulta.module';
     VerificarConsultaModule,
     MarcarConsultaModule,
     CadastroConsultaModule,
-    ConsultaModule
-
+    ConsultaModule,
+    VerificarProcedimentoModule,
+    MarcarProcedimentoModule,
+    CadastroServicoDeProcedimentoModule,
+    AgendaProcedimentoModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true }

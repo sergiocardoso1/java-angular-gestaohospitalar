@@ -14,8 +14,12 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class ProcedimentoMarcar implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -26,6 +30,7 @@ public class ProcedimentoMarcar implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "procedimento_id")
+	@JsonManagedReference
 	private Procedimento procedimento;
 
 	@Temporal(TemporalType.DATE)
@@ -44,9 +49,11 @@ public class ProcedimentoMarcar implements Serializable {
 	public ProcedimentoMarcar() {
 	}
 
-	public ProcedimentoMarcar(Long id, Date dataProcedimento, Date horarioProcedimento, Paciente paciente, Double valor) {
+	public ProcedimentoMarcar(Long id, Procedimento procedimento, Date dataProcedimento, Date horarioProcedimento,
+			Paciente paciente, Double valor) {
 		super();
 		this.id = id;
+		this.procedimento = procedimento;
 		this.dataProcedimento = dataProcedimento;
 		this.horarioProcedimento = horarioProcedimento;
 		this.paciente = paciente;
@@ -93,11 +100,11 @@ public class ProcedimentoMarcar implements Serializable {
 		this.valor = valor;
 	}
 
-	public Procedimento getTipoProcedimento() {
+	public Procedimento getProcedimento() {
 		return procedimento;
 	}
 
-	public void setTipoProcedimento(Procedimento procedimento) {
+	public void setProcedimento(Procedimento procedimento) {
 		this.procedimento = procedimento;
 	}
 

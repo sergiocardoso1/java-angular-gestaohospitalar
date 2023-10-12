@@ -53,6 +53,14 @@ width: 100%;
 
 }
 
+.consulta > a > h2{
+    color: rgb(255, 255, 255);
+}
+
+.procedimento > a > h2{
+    color: rgb(255, 255, 255);
+}
+
 .consulta:hover{
     position: relative;
     top: 2px;

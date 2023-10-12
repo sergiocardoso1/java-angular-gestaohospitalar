@@ -15,6 +15,9 @@ import com.ifba.gestaohospitalar.model.ProcedimentoMarcar;
 public interface ProcedimentoMarcarRepository extends JpaRepository<ProcedimentoMarcar, Long>{
 	
 	@Query("SELECT p FROM ProcedimentoMarcar p WHERE p.dataProcedimento = :data AND p.procedimento = :procedimento")
-    List<ProcedimentoMarcar> findByDataHora(@Param("data") Date data, @Param("procedimento") Procedimento procedimento);
+    List<ProcedimentoMarcar> findByDataHoraAndProce(@Param("data") Date data, @Param("procedimento") Procedimento procedimento);
+	
+	@Query("SELECT p FROM ProcedimentoMarcar p WHERE p.dataProcedimento = :data")
+    List<ProcedimentoMarcar> findByData(@Param("data") Date data);
 	
 }

@@ -21,14 +21,22 @@ import { VerificarConsultaComponent } from './pages/verificar-consulta/verificar
 import { MarcarConsultaComponent } from './pages/marcar-consulta/marcar-consulta.component';
 import { CadastroConsultaComponent } from './pages/cadastro-consulta/cadastro-consulta.component';
 import { ConsultaComponent } from './pages/consulta/consulta.component';
+import { VerificarProcedimentoComponent } from './pages/verificar-procedimento/verificar-procedimento.component';
+import { MarcarProcedimentoComponent } from './pages/marcar-procedimento/marcar-procedimento.component';
+import { CadastroServicoDeProcedimentoComponent } from './pages/cadastro-servico-de-procedimento/cadastro-servico-de-procedimento.component';
+import { AgendaProcedimentoComponent } from './pages/agenda-procedimento/agenda-procedimento.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent, pathMatch:"full"},
   {path:'recuperarsenha', component: EsqueceuSenhaComponent, pathMatch:"full"},
   {path:'home', component: HomeComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'agenda', component: AgendaComponent, pathMatch:"full", canActivate: [AuthGuard] },
+  {path:'agenda/consultas', component: ConsultaComponent, pathMatch:"full", canActivate: [AuthGuard] },
+  {path:'agenda/procedimentos', component: AgendaProcedimentoComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'verificarconsulta', component: VerificarConsultaComponent, pathMatch:"full", canActivate: [AuthGuard] },
-  {path:'consultas', component: ConsultaComponent, pathMatch:"full", canActivate: [AuthGuard] },
+  {path:'verificarprocedimento', component: VerificarProcedimentoComponent, pathMatch:"full", canActivate: [AuthGuard] },
+  {path:'procedimento/:procedimentoselecionado/data/:data', component: MarcarProcedimentoComponent, pathMatch:"full", canActivate: [AuthGuard] },
+  {path:'procedimento/:procedimentoselecionado/data/:data/horario/:horario', component: CadastroServicoDeProcedimentoComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'consulta/especialidade/:especialidadeselecionada/data/:data', component: MarcarConsultaComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'consulta/medico/:medicoid/data/:data/horario/:horario', component: CadastroConsultaComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'pacientes', component: PacientesComponent, pathMatch:"full", canActivate: [AuthGuard] },

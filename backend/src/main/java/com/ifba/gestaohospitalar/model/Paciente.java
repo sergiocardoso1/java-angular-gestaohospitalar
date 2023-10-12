@@ -147,11 +147,11 @@ public class Paciente implements Serializable {
 		this.consulta = consulta;
 	}
 
-	public List<ProcedimentoMarcar> getProcedimento() {
+	public List<ProcedimentoMarcar> getProcedimentoMarcar() {
 		return procedimentoMarcar;
 	}
 
-	public void setProcedimento(List<ProcedimentoMarcar> procedimentoMarcar) {
+	public void setProcedimentoMarcar(List<ProcedimentoMarcar> procedimentoMarcar) {
 		this.procedimentoMarcar = procedimentoMarcar;
 	}
 

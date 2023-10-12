@@ -1,0 +1,96 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 95%;
+    height: 100vh;
+}
+
+.card-especialidades-title{
+    margin-bottom: 20px;
+  }
+  
+.card-especialidades-title > h2{
+color: rgb(26, 25, 25);
+display: flex;
+align-items: center;
+font-size: 30px;
+font-weight: 900;
+font-family: cursive;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.especialidades-hr{
+margin-bottom: 20px;
+}
+
+.container-box{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.buscar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 500px;
+    margin-top: 10%;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 6px;
+    background-color: rgb(60, 123, 240);
+
+}
+
+.dados{
+    display: flex;
+    flex-direction: column;
+}
+.dados select{
+    margin-top: 15px;
+    width: 200px;
+
+}
+.container-buscar{
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    gap: 1rem;
+}
+.consultar{
+    background-color: rgb(122, 77, 180);
+    border-radius: 6px;
+    color: white;
+    border-color: cornflowerblue;
+    font-size: 14px;
+    width: 110px;
+    cursor: pointer;
+}
+.voltar{
+    background-color: lightcoral;
+    border-radius: 6px;
+    color: white;
+    border-color: lightcoral;
+    font-size: 14px;
+    cursor: pointer;
+}
+@media (max-width:768px){
+    .dados select{
+        width: 280px;
+    }
+    .container-buscar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .consultar{
+        width: 130px;
+    }
+    .voltar{
+        margin-top: 10px;
+        width: 100px;
+    }
+}

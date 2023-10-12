@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { especialidade } from 'src/app/models/especialidadeModel';
+import { Procedimento } from 'src/app/models/procedimentoModel';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class ProcedimentoService {
 
   }
 
-  findId(id:number): Observable<especialidade>{
+  findId(id:number): Observable<Procedimento>{
     return this.httpClient.get<especialidade>(`${this.baseURL}${"/"}${id}`);
   }
 

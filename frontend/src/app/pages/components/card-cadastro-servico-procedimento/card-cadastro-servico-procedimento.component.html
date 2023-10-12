@@ -1,0 +1,46 @@
+<div class="paciente-container">
+    <div class="paciente-title">
+        <h2>SELECIONE O PACIENTE</h2>
+    </div>
+  
+    <div class="paciente-hr">
+      <hr/>
+    </div>
+  
+    <div class="paciente-cadastrar">
+      <a [routerLink]="['/pacientes/cadastro']"><span>CADASTRAR</span></a>
+    </div>
+  
+    <div class="paciente-input">
+        <input placeholder="Valor da consulta" type="text" [(ngModel)]="valor">
+    </div>
+    <div class="paciente-input">
+      <input placeholder="Nome do paciente" type="text" [(ngModel)]="nameInput">
+      <div class="paciente-buscar">
+        <a (click)="findName()"><span>BUSCAR</span></a>
+      </div>
+    </div>
+  
+    <div class="paciente-text">
+      <ul>
+        <li *ngFor="let a of pacientes" >
+            <div class="card-paciente" >
+                <a (click)="cadastrar(a.id)">
+                  <h3>{{ a.nome }}</h3>
+                  <h3 *ngIf="a.cpf != null">{{ a.cpf }}</h3>
+                </a>
+            </div>
+        </li>
+        <li *ngIf="pacientes.length === 0">
+          <div class="card-paciente-nao-cadastrado" >
+            <h3>Nenhum paciente encontrado, digite o nome corretamente!</h3>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    
+  
+  
+  </div>
+  

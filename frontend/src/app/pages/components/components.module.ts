@@ -27,6 +27,10 @@ import { CardMarcarConsultaComponent } from './card-marcar-consulta/card-marcar-
 import { CardCadastroConsultaComponent } from './card-cadastro-consulta/card-cadastro-consulta.component';
 import { CardConsultaComponent } from './card-consulta/card-consulta.component';
 import { CardCadastroPacienteComponent } from './card-cadastro-paciente/card-cadastro-paciente.component';
+import { CardVerificarProcedimentoComponent } from './card-verificar-procedimento/card-verificar-procedimento.component';
+import { CardMarcarProcedimentoComponent } from './card-marcar-procedimento/card-marcar-procedimento.component';
+import { CardCadastroServicoProcedimentoComponent } from './card-cadastro-servico-procedimento/card-cadastro-servico-procedimento.component';
+import { CardAgendaProcedimentoComponent } from './card-agenda-procedimento/card-agenda-procedimento.component';
 
 
 
@@ -55,7 +59,11 @@ import { CardCadastroPacienteComponent } from './card-cadastro-paciente/card-cad
     CardMarcarConsultaComponent,
     CardCadastroConsultaComponent,
     CardConsultaComponent,
-    CardCadastroPacienteComponent
+    CardCadastroPacienteComponent,
+    CardVerificarProcedimentoComponent,
+    CardMarcarProcedimentoComponent,
+    CardCadastroServicoProcedimentoComponent,
+    CardAgendaProcedimentoComponent
   ],
   imports: [
     CommonModule,
@@ -88,7 +96,11 @@ import { CardCadastroPacienteComponent } from './card-cadastro-paciente/card-cad
     CardMarcarConsultaComponent,
     CardCadastroConsultaComponent,
     CardConsultaComponent,
-    CardCadastroPacienteComponent
+    CardCadastroPacienteComponent,
+    CardVerificarProcedimentoComponent,
+    CardMarcarProcedimentoComponent,
+    CardCadastroServicoProcedimentoComponent,
+    CardAgendaProcedimentoComponent
 
   ]
 })

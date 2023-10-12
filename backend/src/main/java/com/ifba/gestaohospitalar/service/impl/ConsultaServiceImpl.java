@@ -17,6 +17,7 @@ import com.ifba.gestaohospitalar.model.Consulta;
 import com.ifba.gestaohospitalar.repository.ConsultaRepository;
 import com.ifba.gestaohospitalar.repository.FuncionarioRepository;
 import com.ifba.gestaohospitalar.repository.PacienteRepository;
+import com.ifba.gestaohospitalar.repository.ProcedimentoMarcarRepository;
 import com.ifba.gestaohospitalar.service.ConsultaService;
 import com.ifba.gestaohospitalar.service.FuncionarioService;
 import com.ifba.gestaohospitalar.service.PacienteService;
@@ -41,6 +42,9 @@ public class ConsultaServiceImpl implements ConsultaService{
 	@Autowired
 	private FuncionarioService funcionarioService;
 	
+	@Autowired
+	private ProcedimentoMarcarRepository procedimentoMarcarRepository;
+	
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	private DateFormat formatoEntrada = new SimpleDateFormat("yyyy/MM/dd");
@@ -64,7 +68,6 @@ public class ConsultaServiceImpl implements ConsultaService{
 	
 	@Override
 	public List<Consulta> findByDate(String data) throws ParseException{
-		List<Date> horas = new ArrayList<>();
 		Date data2 = formatoEntrada.parse(data.replace("-", "/"));
 		String dataFormatada = formatoSaida.format(data2);
 		System.out.println(sdf.parse(dataFormatada));
@@ -76,6 +79,7 @@ public class ConsultaServiceImpl implements ConsultaService{
 		obj.setId(null);
 		funcionarioRepository.save(obj.getMedico());
 		pacienteRepository.save(obj.getPaciente());
+		procedimentoMarcarRepository.saveAll(obj.getPaciente().getProcedimentoMarcar());
 		return repository.save(obj);
 	}
 
