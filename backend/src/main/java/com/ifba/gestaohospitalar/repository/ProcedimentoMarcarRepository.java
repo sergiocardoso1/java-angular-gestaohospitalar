@@ -20,4 +20,7 @@ public interface ProcedimentoMarcarRepository extends JpaRepository<Procedimento
 	@Query("SELECT p FROM ProcedimentoMarcar p WHERE p.dataProcedimento = :data")
     List<ProcedimentoMarcar> findByData(@Param("data") Date data);
 	
+	@Query("SELECT COUNT(p) FROM ProcedimentoMarcar p WHERE p.dataProcedimento = :data")
+	long qntProcedimentosHoje(Date data);
+	
 }

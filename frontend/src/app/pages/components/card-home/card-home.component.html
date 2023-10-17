@@ -9,10 +9,10 @@
     </div>
 
     <div class="card-home-card-info">
-      <app-card-info [cardQtd]="alunosCadastrados" cardText="Pacientes"></app-card-info>
-      <app-card-info [cardQtd]="alunosAtivos" cardText="Medicos"></app-card-info>
-      <app-card-info [cardQtd]="planosCadastrados" cardText="Consultas hoje"></app-card-info>
-      <app-card-info [cardQtd]="planosCadastrados" cardText="Procedimentos hoje"></app-card-info>
+      <app-card-info [cardQtd]="pacientes" cardText="Pacientes" [routerLink]="['/pacientes']"></app-card-info>
+      <app-card-info [cardQtd]="procedimentos" cardText="Procedimentos" [routerLink]="['/procedimentos']"></app-card-info>
+      <app-card-info [cardQtd]="consultasHoje" cardText="Consultas hoje" [routerLink]="['/verificarconsulta']"></app-card-info>
+      <app-card-info [cardQtd]="procedimentosHoje" cardText="Procedimentos hoje" [routerLink]="['/verificarprocedimento']"></app-card-info>
     </div>
   </div>
 

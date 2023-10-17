@@ -12,6 +12,7 @@ public interface PacienteService {
 	public Paciente findId(Long id);
 	public List<Paciente> findAll();
 	public List<Paciente> findName(String name);
+	public long quantidadePacientes();
 	public Paciente insert(Paciente obj);
 	public Paciente update(Paciente obj);
 	public void delete(Long id);

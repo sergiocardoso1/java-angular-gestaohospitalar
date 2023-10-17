@@ -19,6 +19,11 @@ export class ProcedimentoService {
     return this.httpClient.get<especialidade>(`${this.baseURL}${"/"}${id}`);
   }
 
+  findQuantidade(): Observable<number>{
+    return this.httpClient.get<number>(`${this.baseURL}${"/quantidade/"}`);
+  
+  }
+
   findAll(): Observable<especialidade[]>{
     return this.httpClient.get<especialidade[]>(`${this.baseURL}`);
   }

@@ -64,6 +64,10 @@ public class PacienteServiceImpl implements PacienteService {
 		return repository.findAll();
 	}
 	
+	public long quantidadePacientes() {
+		return repository.qntPacientes();
+	}
+	
 	public List<Paciente> findName(String name) {
 		return repository.findByNameContaining(name.toLowerCase());
 	}

@@ -20,6 +20,11 @@ export class ConsultaService  {
   
   }
 
+  findQuantidadeHoje(): Observable<number>{
+    return this.httpClient.get<number>(`${this.baseURL}${"/hoje/"}`);
+  
+  }
+
   findByDate(data:string): Observable<consulta[]>{
     return this.httpClient.get<consulta[]>(`${this.baseURL}${"/data/"}${data}`);
   

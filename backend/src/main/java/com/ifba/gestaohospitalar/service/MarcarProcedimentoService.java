@@ -13,6 +13,9 @@ public interface MarcarProcedimentoService {
 	public ProcedimentoMarcar findId(Long id);
 
 	public List<ProcedimentoMarcar> findAll();
+	
+	public long quantidadeProcedimentosHoje();
+	
 
 	public List<ProcedimentoMarcar> findByDate(String data) throws ParseException;
 

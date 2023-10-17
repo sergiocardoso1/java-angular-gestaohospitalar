@@ -18,4 +18,7 @@ public interface PacienteRepository extends JpaRepository<Paciente, Long>{
 	
 	@Query("SELECT u FROM Paciente u WHERE LOWER(u.nome) LIKE LOWER(CONCAT('%', :nome, '%'))")
     List<Paciente> findByNameContaining(@Param("nome") String nome);
+	
+	@Query("SELECT COUNT(p) FROM Paciente p")
+	long qntPacientes();
 }

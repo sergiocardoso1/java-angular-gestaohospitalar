@@ -30,6 +30,12 @@ public class ProcedimentoController {
 		Procedimento obj = service.findId(id);
 		return ResponseEntity.ok().body(obj);
 	}
+	
+	@RequestMapping("/quantidade")
+    public ResponseEntity<Long> quantidade() {
+        Long obj = service.quantidadeProcedimento();
+        return ResponseEntity.ok().body(obj);
+    }
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Procedimento> insert(@Valid @RequestBody ProcedimentoNewDTO objDto) {

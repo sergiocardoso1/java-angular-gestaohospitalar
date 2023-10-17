@@ -39,6 +39,12 @@ public class ServicoDeProcedimentoController {
 		return ResponseEntity.ok().body(obj);
 	}
 	
+	@RequestMapping("/hoje")
+    public ResponseEntity<Long> quantidadeHoje() {
+        Long obj = service.quantidadeProcedimentosHoje();
+        return ResponseEntity.ok().body(obj);
+    }
+	
 	@RequestMapping(value = "/data/{data}/procedimento/{id}", method = RequestMethod.GET)
 	public ResponseEntity<List<String>> listDeHorariosNoDia(@PathVariable String data, @PathVariable Long id) throws ParseException, UnsupportedEncodingException {
 		List<Date> obj = service.listDeHorariosNoDia(data, id);

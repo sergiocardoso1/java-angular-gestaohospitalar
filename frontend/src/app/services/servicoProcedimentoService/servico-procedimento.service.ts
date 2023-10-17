@@ -18,6 +18,11 @@ export class ServicoProcedimentoService {
     return this.httpClient.get<ProcedimentoMarcar>(`${this.baseURL}${"/"}${id}`);
   }
 
+  findQuantidadeHoje(): Observable<number>{
+    return this.httpClient.get<number>(`${this.baseURL}${"/hoje/"}`);
+  
+  }
+
   findAll(): Observable<ProcedimentoMarcar[]>{
     return this.httpClient.get<ProcedimentoMarcar[]>(`${this.baseURL}`);
   }

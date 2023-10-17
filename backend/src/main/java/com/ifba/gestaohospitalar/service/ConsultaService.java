@@ -12,6 +12,7 @@ public interface ConsultaService {
 
 	public Consulta findId(Long id);
 	public List<Consulta> findAll();
+	public long quantidadeConsultasHoje();
 	public List<Consulta> findByDate(String data) throws ParseException;
 	public Consulta insert(Consulta obj);
 	public Consulta update(Consulta obj);

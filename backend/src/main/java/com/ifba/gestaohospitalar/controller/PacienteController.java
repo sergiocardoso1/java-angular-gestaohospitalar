@@ -38,6 +38,12 @@ public class PacienteController {
         List<Paciente> pessoas = service.findName(nome);
         return ResponseEntity.ok(pessoas);
     }
+	
+	@RequestMapping("/quantidade")
+    public ResponseEntity<Long> quantidade() {
+        Long obj = service.quantidadePacientes();
+        return ResponseEntity.ok().body(obj);
+    }
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Paciente> insert(@Valid @RequestBody PacienteNewDTO objDto) throws ParseException {

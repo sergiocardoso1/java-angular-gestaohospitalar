@@ -66,6 +66,10 @@ public class ConsultaServiceImpl implements ConsultaService{
 		return repository.findAll();
 	}
 	
+	public long quantidadeConsultasHoje() {
+		return repository.qntConsultasHoje(new Date());
+	}
+	
 	@Override
 	public List<Consulta> findByDate(String data) throws ParseException{
 		Date data2 = formatoEntrada.parse(data.replace("-", "/"));

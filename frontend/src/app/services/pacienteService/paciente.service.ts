@@ -19,6 +19,11 @@ export class PacienteService {
 
   }
 
+  findQuantidade(): Observable<number>{
+    return this.httpClient.get<number>(`${this.baseURL}${"/quantidade/"}`);
+  
+  }
+
   findId(id:number): Observable<Paciente>{
     return this.httpClient.get<Paciente>(`${this.baseURL}${"/"}${id}`);
   }

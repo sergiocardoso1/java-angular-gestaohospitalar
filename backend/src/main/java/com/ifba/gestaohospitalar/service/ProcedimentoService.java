@@ -10,6 +10,7 @@ public interface ProcedimentoService {
 
 	public Procedimento findId(Long id);
 	public List<Procedimento> findAll();
+	public long quantidadeProcedimento();
 	public Procedimento insert(Procedimento obj);
 	public Procedimento update(Procedimento obj);
 	public void delete(Long id);

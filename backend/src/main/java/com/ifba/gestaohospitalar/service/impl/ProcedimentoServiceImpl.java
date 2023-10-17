@@ -32,18 +32,20 @@ public class ProcedimentoServiceImpl implements ProcedimentoService {
 		return repository.findAll();
 	}
 	
+	public long quantidadeProcedimento() {
+		return repository.qntProcedimentos();
+	}
+
 	@Override
 	public Procedimento insert(Procedimento obj) {
 		obj.setId(null);
 		return repository.save(obj);
 	}
 
-
-
 	@Override
 	public Procedimento update(Procedimento obj) {
 		Procedimento newObj = findId(obj.getId());
-		updateData(newObj,  obj);
+		updateData(newObj, obj);
 
 		return repository.save(newObj);
 	}
@@ -58,21 +60,20 @@ public class ProcedimentoServiceImpl implements ProcedimentoService {
 		}
 	}
 
-	private void updateData(Procedimento newObj , Procedimento obj) {
+	private void updateData(Procedimento newObj, Procedimento obj) {
 		newObj.setNome(obj.getNome());
 	}
 
 	@Override
-	public Procedimento fromDTO(ProcedimentoDTO objDto){
+	public Procedimento fromDTO(ProcedimentoDTO objDto) {
 		Procedimento obj = new Procedimento(objDto.getId(), objDto.getNome());
 		return obj;
 	}
 
 	@Override
-	public Procedimento fromDTO(ProcedimentoNewDTO objDto){
+	public Procedimento fromDTO(ProcedimentoNewDTO objDto) {
 		Procedimento obj = new Procedimento(null, objDto.getNome());
 		return obj;
 	}
 
-	
 }

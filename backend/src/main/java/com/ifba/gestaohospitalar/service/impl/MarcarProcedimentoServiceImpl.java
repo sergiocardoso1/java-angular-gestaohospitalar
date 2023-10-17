@@ -13,12 +13,8 @@ import org.springframework.stereotype.Service;
 
 import com.ifba.gestaohospitalar.dto.ProcedimentoMarcarDTO;
 import com.ifba.gestaohospitalar.dto.ProcedimentoMarcarNewDTO;
-import com.ifba.gestaohospitalar.model.Procedimento;
 import com.ifba.gestaohospitalar.model.ProcedimentoMarcar;
-import com.ifba.gestaohospitalar.repository.ConsultaRepository;
-import com.ifba.gestaohospitalar.repository.PacienteRepository;
 import com.ifba.gestaohospitalar.repository.ProcedimentoMarcarRepository;
-import com.ifba.gestaohospitalar.repository.ProcedimentoRepository;
 import com.ifba.gestaohospitalar.service.MarcarProcedimentoService;
 import com.ifba.gestaohospitalar.service.PacienteService;
 import com.ifba.gestaohospitalar.service.ProcedimentoService;
@@ -34,16 +30,8 @@ public class MarcarProcedimentoServiceImpl implements MarcarProcedimentoService{
 	private PacienteService pacienteService;
 	
 	@Autowired
-	private PacienteRepository pacienteRepository;
-	
-	@Autowired
-	private ProcedimentoRepository procedimentoRepository;
-	
-	@Autowired
 	private ProcedimentoService procedimentoService;
 	
-	@Autowired
-	private ConsultaRepository consultaRepository;
 	
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -64,6 +52,10 @@ public class MarcarProcedimentoServiceImpl implements MarcarProcedimentoService{
 	@Override
 	public List<ProcedimentoMarcar> findAll() {
 		return repository.findAll();
+	}
+	
+	public long quantidadeProcedimentosHoje() {
+		return repository.qntProcedimentosHoje(new Date());
 	}
 	
 	@Override

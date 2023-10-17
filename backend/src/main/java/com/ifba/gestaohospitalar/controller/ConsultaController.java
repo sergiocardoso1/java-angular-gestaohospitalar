@@ -51,6 +51,12 @@ public class ConsultaController {
 		
 	}
 	
+	@RequestMapping("/hoje")
+    public ResponseEntity<Long> quantidadeHoje() {
+        Long obj = service.quantidadeConsultasHoje();
+        return ResponseEntity.ok().body(obj);
+    }
+	
 	@RequestMapping(value = "/data/{data}", method = RequestMethod.GET)
 	public ResponseEntity<List<Consulta>> findByDate(@PathVariable String data) throws ParseException, UnsupportedEncodingException {
 		List<Consulta> obj = service.findByDate(data);

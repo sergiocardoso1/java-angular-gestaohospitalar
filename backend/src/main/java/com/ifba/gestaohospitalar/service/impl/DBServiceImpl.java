@@ -125,7 +125,7 @@ public class DBServiceImpl {
 		
 		Consulta cons = new Consulta(null, func3, sdf.parse("11/10/2023"), sdfData.parse("15:00"), pac2, 300.0);
 		consultaRepository.save(cons);
-		ProcedimentoMarcar procMarcar = new ProcedimentoMarcar(null, proced, sdf.parse("11/10/2023"), sdfData.parse("15:00"), pac2, 300.0);
+		ProcedimentoMarcar procMarcar = new ProcedimentoMarcar(null, proced, sdf.parse("16/10/2023"), sdfData.parse("15:00"), pac2, 300.0);
 		procedimentoMarcarRepository.save(procMarcar);
 
 		
