@@ -98,6 +98,10 @@ export class CardExibirFuncionarioComponent implements OnInit{
         }
       );
     }
+
+    alert(){
+      alert("Prontuário ainda não foi cadastrado");
+    }
   
   
   }

@@ -16,6 +16,9 @@ public interface PacienteRepository extends JpaRepository<Paciente, Long>{
 	@Transactional(readOnly = true)
 	Paciente findByEmail(String email);
 	
+	@Query("SELECT p FROM Paciente p JOIN p.prontuario pr WHERE pr.id = :id")
+	Paciente findByProntuario(Long id);
+	
 	@Query("SELECT u FROM Paciente u WHERE LOWER(u.nome) LIKE LOWER(CONCAT('%', :nome, '%'))")
     List<Paciente> findByNameContaining(@Param("nome") String nome);
 	

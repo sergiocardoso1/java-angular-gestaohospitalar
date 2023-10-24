@@ -27,14 +27,13 @@ export class CardMarcarConsultaComponent implements OnInit{
   constructor(private funcionarioService:FuncionarioService, private route: ActivatedRoute, private router: Router, private consultaService:ConsultaService){
     this.paramValueId = this.route.snapshot.paramMap.get('especialidadeselecionada');
     this.paramValueData = this.route.snapshot.paramMap.get('data');
-    console.log(this.paramValueId)
     this.funcionarioService.findByEspecialidade(this.paramValueId).subscribe(data => {
       this.funcionarios = data;
-       this.funcionarios.forEach((funcionarioConsultaDTO) => {
+      this.funcionarios.forEach((funcionarioConsultaDTO) => {
       this.consultaService.findHoursByDate(this.paramValueData, funcionarioConsultaDTO.id).subscribe((data: string[]) => {
         this.horarioResposta = data;
-        console.log(data)
         funcionarioConsultaDTO.horario = this.removeRepetidos(this.horario, data);
+        this.sleep(2000)
       });
     });
       
@@ -60,5 +59,8 @@ export class CardMarcarConsultaComponent implements OnInit{
     this.router.navigate(['/consulta/medico/',medicoId,'data',this.paramValueData,'horario',horarioSelecionado]);
   }
 
+  sleep(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
 }

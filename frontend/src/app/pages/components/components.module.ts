@@ -31,6 +31,9 @@ import { CardVerificarProcedimentoComponent } from './card-verificar-procediment
 import { CardMarcarProcedimentoComponent } from './card-marcar-procedimento/card-marcar-procedimento.component';
 import { CardCadastroServicoProcedimentoComponent } from './card-cadastro-servico-procedimento/card-cadastro-servico-procedimento.component';
 import { CardAgendaProcedimentoComponent } from './card-agenda-procedimento/card-agenda-procedimento.component';
+import { CardExibirProntuarioComponent } from './card-exibir-prontuario/card-exibir-prontuario.component';
+import { CardExibicaoConsultaComponent } from './card-exibicao-consulta/card-exibicao-consulta.component';
+import { CardConsultaPacienteComponent } from './card-consulta-paciente/card-consulta-paciente.component';
 
 
 
@@ -63,7 +66,10 @@ import { CardAgendaProcedimentoComponent } from './card-agenda-procedimento/card
     CardVerificarProcedimentoComponent,
     CardMarcarProcedimentoComponent,
     CardCadastroServicoProcedimentoComponent,
-    CardAgendaProcedimentoComponent
+    CardAgendaProcedimentoComponent,
+    CardExibirProntuarioComponent,
+    CardExibicaoConsultaComponent,
+    CardConsultaPacienteComponent
   ],
   imports: [
     CommonModule,
@@ -100,7 +106,10 @@ import { CardAgendaProcedimentoComponent } from './card-agenda-procedimento/card
     CardVerificarProcedimentoComponent,
     CardMarcarProcedimentoComponent,
     CardCadastroServicoProcedimentoComponent,
-    CardAgendaProcedimentoComponent
+    CardAgendaProcedimentoComponent,
+    CardExibirProntuarioComponent,
+    CardExibicaoConsultaComponent,
+    CardConsultaPacienteComponent
 
   ]
 })

@@ -73,10 +73,16 @@
       <div class="btns">
         <div class="paciente-btns">
           <div class="btn-paciente-matricula">
-            <a [routerLink]="['/alunos',paciente.id,'matricula']"><span>MATRÍCULA</span></a>
-          </div>
-          <div class="btn-paciente-treino">
-            <a [routerLink]="['/alunos',paciente.id,'fichas']"><span>FICHAS</span></a>
+            <a *ngIf="paciente.prontuario == null; then alertaBlock else linkBlock"></a>
+
+              <ng-template #alertaBlock>
+                <a (click)="alerta()"><span>PRONTUÁRIOS</span></a>
+              </ng-template>
+
+              <ng-template #linkBlock>
+                <a [routerLink]="['/prontuarios', paciente.prontuario.id]"><span>PRONTUÁRIOS</span></a>
+              </ng-template>
+
           </div>
           <div class="btn-paciente-editar">
             <a [routerLink]="['/pacientes',paciente.id,'editar']"><span>EDITAR</span></a>

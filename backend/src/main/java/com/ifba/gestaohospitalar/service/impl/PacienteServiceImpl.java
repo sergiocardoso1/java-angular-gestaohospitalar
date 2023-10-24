@@ -71,6 +71,11 @@ public class PacienteServiceImpl implements PacienteService {
 	public List<Paciente> findName(String name) {
 		return repository.findByNameContaining(name.toLowerCase());
 	}
+	
+	@Override
+	public Paciente findByProntuario(Long id) {
+		return repository.findByProntuario(id);
+	}
 
 	@Override
 	public Paciente insert(Paciente obj) {
@@ -172,5 +177,7 @@ public class PacienteServiceImpl implements PacienteService {
 				objDto.getConvenio(), objDto.getTelefone(), objDto.getCpf(), new Date() ,end);
 		return obj;
 	}
+
+
 
 }

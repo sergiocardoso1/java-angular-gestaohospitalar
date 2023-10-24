@@ -18,7 +18,7 @@
       <ul>
         <li *ngFor="let a of consultas" >
             <div class="card-paciente" >
-                <a [routerLink]="['/pacientes',a.id]">
+                <a [routerLink]="['/consultas',a.id]">
                   <h3>Med: {{ a.medico.nome }}</h3>
                   <h3>Pac: {{ a.paciente.nome }}</h3>
                   <h3>Hora: {{ (transform(a.horarioConsulta) | date:'HH:mm') }}</h3>

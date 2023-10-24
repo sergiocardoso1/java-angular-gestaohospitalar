@@ -49,6 +49,10 @@ public class Paciente implements Serializable {
 	@JsonIgnore
 	private List<ProcedimentoMarcar> procedimentoMarcar = new ArrayList<>();
 
+	@OneToOne
+	@JoinColumn(name = "prontuario.id")
+	private Prontuario prontuario;
+
 	public Paciente() {
 
 	}
@@ -153,6 +157,14 @@ public class Paciente implements Serializable {
 
 	public void setProcedimentoMarcar(List<ProcedimentoMarcar> procedimentoMarcar) {
 		this.procedimentoMarcar = procedimentoMarcar;
+	}
+
+	public Prontuario getProntuario() {
+		return prontuario;
+	}
+
+	public void setProntuario(Prontuario prontuario) {
+		this.prontuario = prontuario;
 	}
 
 	@Override

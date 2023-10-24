@@ -32,6 +32,9 @@ import { MarcarProcedimentoModule } from './pages/marcar-procedimento/marcar-pro
 import { CadastroServicoDeProcedimentoComponent } from './pages/cadastro-servico-de-procedimento/cadastro-servico-de-procedimento.component';
 import { CadastroServicoDeProcedimentoModule } from './pages/cadastro-servico-de-procedimento/cadastro-servico-de-procedimento.module';
 import { AgendaProcedimentoModule } from './pages/agenda-procedimento/agenda-procedimento.module';
+import { ExibirProntuarioModule } from './pages/exibir-prontuario/exibir-prontuario.module';
+import { ExibicaoConsultaModule } from './pages/exibicao-consulta/exibicao-consulta.module';
+import { ExibicaoConsultaPacienteModule } from './pages/exibicao-consulta-paciente/exibicao-consulta-paciente.module';
 
 @NgModule({
   declarations: [
@@ -68,7 +71,10 @@ import { AgendaProcedimentoModule } from './pages/agenda-procedimento/agenda-pro
     VerificarProcedimentoModule,
     MarcarProcedimentoModule,
     CadastroServicoDeProcedimentoModule,
-    AgendaProcedimentoModule
+    AgendaProcedimentoModule,
+    ExibirProntuarioModule,
+    ExibicaoConsultaModule,
+    ExibicaoConsultaPacienteModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true }

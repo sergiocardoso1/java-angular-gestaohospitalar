@@ -25,6 +25,9 @@ import { VerificarProcedimentoComponent } from './pages/verificar-procedimento/v
 import { MarcarProcedimentoComponent } from './pages/marcar-procedimento/marcar-procedimento.component';
 import { CadastroServicoDeProcedimentoComponent } from './pages/cadastro-servico-de-procedimento/cadastro-servico-de-procedimento.component';
 import { AgendaProcedimentoComponent } from './pages/agenda-procedimento/agenda-procedimento.component';
+import { ExibirProntuarioComponent } from './pages/exibir-prontuario/exibir-prontuario.component';
+import { ExibicaoConsultaComponent } from './pages/exibicao-consulta/exibicao-consulta.component';
+import { ExibicaoConsultaPacienteComponent } from './pages/exibicao-consulta-paciente/exibicao-consulta-paciente.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent, pathMatch:"full"},
@@ -39,10 +42,13 @@ const routes: Routes = [
   {path:'procedimento/:procedimentoselecionado/data/:data/horario/:horario', component: CadastroServicoDeProcedimentoComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'consulta/especialidade/:especialidadeselecionada/data/:data', component: MarcarConsultaComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'consulta/medico/:medicoid/data/:data/horario/:horario', component: CadastroConsultaComponent, pathMatch:"full", canActivate: [AuthGuard] },
+  {path:'consultas/:id', component: ExibicaoConsultaComponent, pathMatch:"full", canActivate: [AuthGuard] },
+  {path:'consultas/paciente/:id', component: ExibicaoConsultaPacienteComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'pacientes', component: PacientesComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'pacientes/cadastro', component: CadastroPacienteComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'pacientes/:id/editar', component: EdicaoPacienteComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'pacientes/:id', component: ExibicaoPacienteComponent, pathMatch:"full", canActivate: [AuthGuard] },
+  {path:'prontuarios/:id', component: ExibirProntuarioComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'especialidades/cadastro', component: CadastroEspecialidadeComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'especialidades', component: EspecialidadeComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'procedimentos/cadastro', component: CadastroProcedimentoComponent, pathMatch:"full", canActivate: [AuthGuard] },

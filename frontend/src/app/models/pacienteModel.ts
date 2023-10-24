@@ -1,4 +1,5 @@
 import { endereco } from "./enderecoModel"
+import { Prontuario } from "./prontuarioModel"
 
 export type Paciente = {
   id:number,
@@ -8,5 +9,6 @@ export type Paciente = {
   cpf:string,
   dataDeNascimento:string,
   telefone:string,
-  endereco:endereco
+  endereco:endereco,
+  prontuario:Prontuario
 }

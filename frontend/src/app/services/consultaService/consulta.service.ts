@@ -35,6 +35,11 @@ export class ConsultaService  {
     return this.httpClient.get<string[]>(`${this.baseURL}${"/data/"}${data}${"/medico/"}${id}`);
   
   }
+
+  findByPaciente(id:number): Observable<consulta[]>{
+    return this.httpClient.get<consulta[]>(`${this.baseURL}${"/paciente/"}${id}`);
+  
+  }
   
   
   findId(id:number): Observable<consulta>{

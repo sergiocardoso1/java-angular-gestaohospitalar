@@ -1,0 +1,67 @@
+
+<div class="container-selecao-paciente">
+    <div class="selecao-paciente-title">
+      <h3>CONSULTA</h3>
+      <hr/>
+    </div>
+  
+    <div class="display-selecao-paciente">
+  
+      <div class="exib-paciente">
+  
+        <div class="selecao-paciente-nome">
+          <h4>Paciente: </h4>
+          <p>{{ consulta.paciente.nome }}</p>
+        </div>
+        <div class="selecao-paciente-email">
+          <h4>Email: </h4>
+          <p>{{ consulta.paciente.email }}</p>
+        </div>
+        <div class="selecao-paciente-email">
+          <h4>CPF: </h4>
+          <p>{{ consulta.paciente.cpf }}</p>
+        </div>
+        <div class="selecao-telefone">
+          <h4>Telefone: </h4>
+          <p>{{ consulta.paciente.telefone }}</p>
+        </div>
+        <div class="selecao-telefone">
+            <h4>Convenio: </h4>
+            <p>{{ consulta.paciente.convenio }}</p>
+        </div>
+        <div class="selecao-paciente-dataNascimento">
+          <h4>Data de nascimento: </h4>
+          <p>{{ consulta.paciente.dataDeNascimento }}</p>
+        </div>
+        <div class="selecao-telefone" *ngIf="consulta.paciente.prontuario">
+          <h4>Prontuário ID:</h4>
+          <p>{{ consulta.paciente.prontuario.id }}</p>
+        </div>
+      
+      
+        
+      </div>
+  
+      <div class="btns">
+        <div class="paciente-btns">
+            <div class="btn-paciente-matricula">
+                <a *ngIf="!consulta.paciente.prontuario; then criarBlock else linkBlock"></a>
+              
+                <ng-template #criarBlock>
+                  <a (click)="criarProntuario()"><span>PRONTUÁRIOS</span></a>
+                </ng-template>
+              
+                <ng-template #linkBlock>
+                  <a [routerLink]="['/prontuarios', consulta.paciente.prontuario.id]"><span>PRONTUÁRIOS</span></a>
+                </ng-template>
+              </div>
+              
+          <div class="btn-paciente-editar">
+            <a [routerLink]="['/pacientes',consulta.paciente.id,'editar']"><span>RESULTADO</span></a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

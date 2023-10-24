@@ -33,6 +33,11 @@ export class PacienteService {
 
   }
 
+  findByProntuario(id:number): Observable<Paciente>{
+    return this.httpClient.get<Paciente>(`${this.baseURL}${"/prontuario/"}${id}`);
+
+  }
+
 
   update(objDto: any, id:number): Observable<void>{
     return this.httpClient.put<void>(`${this.baseURL}${"/"}${id}`, objDto);

@@ -1,0 +1,44 @@
+
+<div class="container-selecao-paciente">
+    <div class="selecao-paciente-title">
+      <h3>PRONTUÁRIO</h3>
+      <hr/>
+    </div>
+  
+    <div class="display-selecao-paciente">
+  
+      <div class="exib-paciente">
+  
+        <div class="selecao-paciente-nome">
+          <h4>Paciente: </h4>
+          <p>{{ paciente.nome }}</p>
+        </div>
+        <div class="selecao-paciente-nome">
+          <h4>CPF: </h4>
+          <p>{{ paciente.cpf }}</p>
+        </div>
+        <div class="selecao-paciente-nome">
+          <h4>Prontuario ID: </h4>
+          <p>{{ prontuario.id }}</p>
+        </div>
+        <div class="selecao-paciente-email">
+          <h4>Data de Cadastro do prontuário: </h4>
+          <p>{{ prontuario.dataDeCadastro }}</p>
+        </div>
+    
+  
+      </div>
+
+      <div class="btns">
+        <div class="paciente-btns">
+          
+          <div class="btn-paciente-editar">
+            <a [routerLink]="['/consultas/paciente',paciente.id]"><span>CONSULTAS</span></a>
+          </div>
+        
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

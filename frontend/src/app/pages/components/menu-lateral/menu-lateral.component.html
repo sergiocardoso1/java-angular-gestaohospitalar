@@ -1,4 +1,7 @@
-<div class="container-menu-lateral">
+<div class="menu-bar" [ngClass]="{'collapsed-menu': menuCollapsed}">
+  <div class="btn-menu">
+    <a (click)="toggleMenu()"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></a>
+  </div>
 
   <ul>
     <div class="menu-lateral-text">

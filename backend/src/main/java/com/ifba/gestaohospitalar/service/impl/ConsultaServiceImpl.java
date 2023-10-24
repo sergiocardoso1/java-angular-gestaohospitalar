@@ -77,6 +77,11 @@ public class ConsultaServiceImpl implements ConsultaService{
 		System.out.println(sdf.parse(dataFormatada));
 		return repository.findByDate(sdf.parse(dataFormatada));
 	}
+	
+	@Override
+	public List<Consulta> findByPaciente(Long id) {
+		return repository.findByPaciente(id);
+	}
 
 	@Override
 	public Consulta insert(Consulta obj) {
@@ -133,6 +138,8 @@ public class ConsultaServiceImpl implements ConsultaService{
 		}
 		return horas;
 	}
+
+	
 
 
 }

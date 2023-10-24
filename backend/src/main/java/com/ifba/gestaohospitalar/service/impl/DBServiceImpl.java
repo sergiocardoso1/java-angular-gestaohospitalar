@@ -94,7 +94,7 @@ public class DBServiceImpl {
 
 		pacienteRepository.save(pac1);
 
-		Paciente pac2 = new Paciente(null, "dsadasdsa", "jdsajdsa@gmail.com", sdf.parse("26/04/1998"),
+		Paciente pac2 = new Paciente(null, "Júlio Cesar", "jdsajdsa@gmail.com", sdf.parse("26/04/1998"),
 				"Convenio", "75981616503", "64285214075", new Date(), endereco1);
 
 		pacienteRepository.save(pac2);
@@ -123,9 +123,9 @@ public class DBServiceImpl {
 
 		funcionarioRepository.saveAll(Arrays.asList(func, func2, func3));
 		
-		Consulta cons = new Consulta(null, func3, sdf.parse("11/10/2023"), sdfData.parse("15:00"), pac2, 300.0);
+		Consulta cons = new Consulta(null, func3, sdf.parse("24/10/2023"), sdfData.parse("15:00"), pac2, 300.0);
 		consultaRepository.save(cons);
-		ProcedimentoMarcar procMarcar = new ProcedimentoMarcar(null, proced, sdf.parse("16/10/2023"), sdfData.parse("15:00"), pac2, 300.0);
+		ProcedimentoMarcar procMarcar = new ProcedimentoMarcar(null, proced, sdf.parse("24/10/2023"), sdfData.parse("15:00"), pac2, 300.0);
 		procedimentoMarcarRepository.save(procMarcar);
 
 		

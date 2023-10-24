@@ -65,6 +65,12 @@ public class ConsultaController {
 		
 	}
 	
+	@RequestMapping(value = "paciente/{id}", method = RequestMethod.GET)
+	public ResponseEntity<List<Consulta>> findByPaciente(@PathVariable Long id) {
+		List<Consulta> obj = service.findByPaciente(id);
+		return ResponseEntity.ok().body(obj);
+	}
+	
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Consulta> insert(@Valid @RequestBody ConsultaNewDTO objDto) throws ParseException {

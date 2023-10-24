@@ -1,0 +1,233 @@
+
+.container-selecao-paciente{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 95%;
+    gap: 10px;
+  }
+  
+  
+  .selecao-paciente-title > h3{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+  }
+  
+  .selecao-paciente-title > hr{
+    width: 100%;
+  }
+  
+  h4{
+    font-size: 17px;
+  }
+  
+  .selecao-paciente-endereco{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .selecao-paciente-endereco > hr{
+    width: 100%;
+  }
+  
+  .selecao-paciente-endereco > h4{
+    font-size: 20px;
+  }
+  
+  .display-selecao-paciente{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .paciente-btns{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 10px;
+  }
+  
+  
+  .btn-paciente-editar > a{
+    display: flex;
+    width: 130px;
+    height: 25px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #333;
+    letter-spacing: 2px;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    transition: all .35s;
+    margin-right: 7px;
+    border-radius: 3px;
+  }
+  
+  .btn-paciente-editar > a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .btn-paciente-editar > a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #7c8320;
+    transition: all .35s;
+  }
+  
+  .btn-paciente-editar > a:hover{
+    color: #fff;
+  }
+  
+  .btn-paciente-editar > a:hover:after{
+    width: 100%;
+  }
+  
+  .btn-paciente-excluir > a{
+    display: flex;
+    width: 130px;
+    height: 25px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #333;
+    letter-spacing: 2px;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    transition: all .35s;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .btn-paciente-excluir > a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .btn-paciente-excluir > a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ff003b;
+    transition: all .35s;
+  }
+  
+  .btn-paciente-excluir > a:hover{
+    color: #fff;
+  }
+  
+  .btn-paciente-excluir > a:hover:after{
+    width: 100%;
+  }
+  
+  .btn-paciente-treino > a{
+    display: flex;
+    width: 130px;
+    height: 25px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #333;
+    letter-spacing: 2px;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    transition: all .35s;
+    margin-right: 7px;
+    border-radius: 3px;
+  }
+  
+  .btn-paciente-treino > a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .btn-paciente-treino > a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #206f83;
+    transition: all .35s;
+  }
+  
+  .btn-paciente-treino > a:hover{
+    color: #fff;
+  }
+  
+  .btn-paciente-treino > a:hover:after{
+    width: 100%;
+  }
+  
+  
+  .btn-paciente-matricula > a{
+    display: flex;
+    width: 130px;
+    height: 25px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #333;
+    letter-spacing: 2px;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    transition: all .35s;
+    margin-right: 7px;
+    border-radius: 3px;
+  }
+  
+  .btn-paciente-matricula > a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .btn-paciente-matricula > a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #20835a;
+    transition: all .35s;
+  }
+  
+  .btn-paciente-matricula > a:hover{
+    color: #fff;
+  }
+  
+  .btn-paciente-matricula > a:hover:after{
+    width: 100%;
+  }
+  

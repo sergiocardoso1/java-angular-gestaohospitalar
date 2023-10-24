@@ -39,6 +39,12 @@ public class PacienteController {
         return ResponseEntity.ok(pessoas);
     }
 	
+	@RequestMapping(value = "/prontuario/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Paciente> findByProntuario(@PathVariable Long id) {
+        Paciente obj = service.findByProntuario(id);
+        return ResponseEntity.ok().body(obj);
+    }
+	
 	@RequestMapping("/quantidade")
     public ResponseEntity<Long> quantidade() {
         Long obj = service.quantidadePacientes();

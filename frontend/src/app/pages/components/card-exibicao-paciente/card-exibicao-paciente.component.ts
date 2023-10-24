@@ -4,6 +4,7 @@ import { cidade } from 'src/app/models/cidadeModel';
 import { endereco } from 'src/app/models/enderecoModel';
 import { estado } from 'src/app/models/estadoModel';
 import { Paciente } from 'src/app/models/pacienteModel';
+import { Prontuario } from 'src/app/models/prontuarioModel';
 import { PacienteService } from 'src/app/services/pacienteService/paciente.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class CardExibicaoPacienteComponent implements OnInit{
   [x: string]: any;
   
     paciente: Paciente;
+    prontuario: Prontuario | any;
     paramValue:number | any;
     endereco: endereco;
     cidade: cidade;
@@ -44,6 +46,8 @@ export class CardExibicaoPacienteComponent implements OnInit{
         complemento: "",
         cidade: this.cidade
       }
+
+  
   
       this.paciente = {
         id:this.paramValue,
@@ -53,7 +57,8 @@ export class CardExibicaoPacienteComponent implements OnInit{
         convenio: "",
         dataDeNascimento: "",
         telefone: "",
-        endereco: this.endereco
+        endereco: this.endereco,
+        prontuario: this.prontuario || null
       }
   
     }
@@ -65,6 +70,7 @@ export class CardExibicaoPacienteComponent implements OnInit{
         this.estado = data.endereco.cidade.estado;
         this.cidade = data.endereco.cidade;
         this.endereco = data.endereco;
+        this.prontuario = data.prontuario
         this.paciente = data;
       });
   
@@ -81,6 +87,10 @@ export class CardExibicaoPacienteComponent implements OnInit{
           
         }
       );
+    }
+
+    alerta(){
+      alert("Prontuario ainda não foi cadastrado!"); 
     }
   
   

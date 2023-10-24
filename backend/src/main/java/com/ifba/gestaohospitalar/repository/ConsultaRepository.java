@@ -19,6 +19,9 @@ public interface ConsultaRepository extends JpaRepository<Consulta, Long>{
 	@Query("SELECT c FROM Consulta c WHERE c.dataConsulta = :data")
 	List<Consulta> findByDate(Date data);
 	
+	@Query("SELECT c FROM Consulta c JOIN c.paciente p WHERE p.id = :id")
+	List<Consulta> findByPaciente(Long id);
+	
 	@Query("SELECT COUNT(c) FROM Consulta c WHERE c.dataConsulta = :data")
 	long qntConsultasHoje(Date data);
 	
