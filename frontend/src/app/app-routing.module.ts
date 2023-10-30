@@ -28,6 +28,9 @@ import { AgendaProcedimentoComponent } from './pages/agenda-procedimento/agenda-
 import { ExibirProntuarioComponent } from './pages/exibir-prontuario/exibir-prontuario.component';
 import { ExibicaoConsultaComponent } from './pages/exibicao-consulta/exibicao-consulta.component';
 import { ExibicaoConsultaPacienteComponent } from './pages/exibicao-consulta-paciente/exibicao-consulta-paciente.component';
+import { CadastroLaudoComponent } from './pages/cadastro-laudo/cadastro-laudo.component';
+import { ExibicaoLaudoComponent } from './pages/exibicao-laudo/exibicao-laudo.component';
+
 
 const routes: Routes = [
   {path:'login', component: LoginComponent, pathMatch:"full"},
@@ -44,6 +47,8 @@ const routes: Routes = [
   {path:'consulta/medico/:medicoid/data/:data/horario/:horario', component: CadastroConsultaComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'consultas/:id', component: ExibicaoConsultaComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'consultas/paciente/:id', component: ExibicaoConsultaPacienteComponent, pathMatch:"full", canActivate: [AuthGuard] },
+  {path:'consultas/:id/cadastrolaudo', component: CadastroLaudoComponent, pathMatch:"full", canActivate: [AuthGuard] },
+  {path:'laudos/:id', component: ExibicaoLaudoComponent , pathMatch:"full", canActivate: [AuthGuard] },
   {path:'pacientes', component: PacientesComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'pacientes/cadastro', component: CadastroPacienteComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'pacientes/:id/editar', component: EdicaoPacienteComponent, pathMatch:"full", canActivate: [AuthGuard] },

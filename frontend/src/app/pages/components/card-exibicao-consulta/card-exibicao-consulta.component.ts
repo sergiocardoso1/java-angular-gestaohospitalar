@@ -4,10 +4,12 @@ import { cidade } from 'src/app/models/cidadeModel';
 import { consulta } from 'src/app/models/consultaModel';
 import { endereco } from 'src/app/models/enderecoModel';
 import { estado } from 'src/app/models/estadoModel';
+import { Laudo } from 'src/app/models/laudoModel';
 import { Paciente } from 'src/app/models/pacienteModel';
 import { Prontuario } from 'src/app/models/prontuarioModel';
 import { ProntuarioNewDTO } from 'src/app/models/prontuarioNewDTO';
 import { ConsultaService } from 'src/app/services/consultaService/consulta.service';
+import { LaudoService } from 'src/app/services/laudoService/laudo.service';
 import { PacienteService } from 'src/app/services/pacienteService/paciente.service';
 import { ProntuarioService } from 'src/app/services/prontuarioService/prontuario.service';
 
@@ -21,15 +23,22 @@ export class CardExibicaoConsultaComponent implements OnInit{
   
     consulta!: consulta;
     paramValue:number | any;
+    laudo: Laudo;
  
   
   
-    constructor(private consultaService:ConsultaService, private prontuarioService:ProntuarioService ,private route: ActivatedRoute, private router: Router){
+    constructor(private consultaService:ConsultaService, private prontuarioService:ProntuarioService, private laudoService:LaudoService ,private route: ActivatedRoute, private router: Router){
       this.paramValue = this.route.snapshot.paramMap.get('id');
     
       this.consultaService.findId(this.paramValue).subscribe(data => {
         this.consulta = data;
       })
+
+      this.laudo = {
+        id:0,
+        descricao:"",
+        consulta:this.consulta
+      }
 
     }
 
@@ -41,6 +50,20 @@ export class CardExibicaoConsultaComponent implements OnInit{
       this.prontuarioService.create(objDto).subscribe(data => {
         alert("Prontuário criado! Clique novamente para abri-lo")
         window.location.reload();
+      })
+    }
+
+    criarLaudo(){
+      this.laudoService.findByConsulta(this.paramValue).subscribe(data =>{
+        if(data == null){
+          console.log("n vazio")
+          this.router.navigate(['/consultas',this.paramValue,'cadastrolaudo']);
+        }else{
+          console.log("vazio")
+          this.laudo = data;
+          this.router.navigate(['/laudos',this.laudo.id]);
+        }
+        
       })
     }
   

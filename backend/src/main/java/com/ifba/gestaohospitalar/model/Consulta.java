@@ -10,10 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Consulta implements Serializable {
@@ -40,6 +42,10 @@ public class Consulta implements Serializable {
 	@JoinColumn(name = "paciente")
 	private Paciente paciente;
 	private Double valor;
+	
+	@JsonIgnore
+	@OneToOne(mappedBy = "consulta")
+	private Laudo laudo;
 
 	public Consulta() {
 	}
@@ -101,6 +107,14 @@ public class Consulta implements Serializable {
 
 	public void setValor(Double valor) {
 		this.valor = valor;
+	}
+
+	public Laudo getLaudo() {
+		return laudo;
+	}
+
+	public void setLaudo(Laudo laudo) {
+		this.laudo = laudo;
 	}
 
 	@Override

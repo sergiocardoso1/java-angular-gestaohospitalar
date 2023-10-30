@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { cep } from 'src/app/models/cep';
 import { especialidade } from 'src/app/models/especialidadeModel';
 import { funcionarioDTO } from 'src/app/models/funcionarioDTO copy';
-import { funcionarioNewDTO } from 'src/app/models/funcionarioNewDTO';
 import { CepService } from 'src/app/services/cepservice/cep.service';
 import { EspecialidadeService } from 'src/app/services/especialidadeService/especialidade.service';
 import { FuncionarioService } from 'src/app/services/funcionarioService/funcionario.service';

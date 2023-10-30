@@ -29,12 +29,14 @@ import { CadastroConsultaModule } from './pages/cadastro-consulta/cadastro-consu
 import { ConsultaModule } from './pages/consulta/consulta.module';
 import { VerificarProcedimentoModule } from './pages/verificar-procedimento/verificar-procedimento.module';
 import { MarcarProcedimentoModule } from './pages/marcar-procedimento/marcar-procedimento.module';
-import { CadastroServicoDeProcedimentoComponent } from './pages/cadastro-servico-de-procedimento/cadastro-servico-de-procedimento.component';
 import { CadastroServicoDeProcedimentoModule } from './pages/cadastro-servico-de-procedimento/cadastro-servico-de-procedimento.module';
 import { AgendaProcedimentoModule } from './pages/agenda-procedimento/agenda-procedimento.module';
 import { ExibirProntuarioModule } from './pages/exibir-prontuario/exibir-prontuario.module';
 import { ExibicaoConsultaModule } from './pages/exibicao-consulta/exibicao-consulta.module';
 import { ExibicaoConsultaPacienteModule } from './pages/exibicao-consulta-paciente/exibicao-consulta-paciente.module';
+import { CadastroLaudoModule } from './pages/cadastro-laudo/cadastro-laudo.module';
+import { ExibicaoLaudoModule } from './pages/exibicao-laudo/exibicao-laudo.module';
+
 
 @NgModule({
   declarations: [
@@ -74,7 +76,9 @@ import { ExibicaoConsultaPacienteModule } from './pages/exibicao-consulta-pacien
     AgendaProcedimentoModule,
     ExibirProntuarioModule,
     ExibicaoConsultaModule,
-    ExibicaoConsultaPacienteModule
+    ExibicaoConsultaPacienteModule,
+    CadastroLaudoModule,
+    ExibicaoLaudoModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true }

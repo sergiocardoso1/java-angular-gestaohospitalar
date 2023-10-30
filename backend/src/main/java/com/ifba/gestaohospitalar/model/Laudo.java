@@ -20,7 +20,7 @@ public class Laudo implements Serializable {
 	private Long id;
 
 	@OneToOne
-	@JoinColumn(name = "consulta")
+	@JoinColumn(name = "consulta.id")
 	private Consulta consulta;
 	private String descricao;
 

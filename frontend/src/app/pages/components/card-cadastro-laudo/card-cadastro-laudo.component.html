@@ -1,0 +1,25 @@
+<div class="container-cadastro-especialidade">
+    <div class="title-cadastro-especialidade">
+      <h2>CADASTRO DE PRONTUÁRIO</h2>
+    </div>
+  
+    <div class="cadastro-especialidade-hr">
+      <hr/>
+    </div>
+  
+  
+    <div class="cadastro-especialidade-inputs">
+      <form #myFrom="ngForm">
+        <ul>
+          <li>
+            <div class="input-nome">
+              <textarea [(ngModel)]="descricao" name="descricao" required placeholder="Descrição"></textarea>
+
+            </div>
+          </li>
+        </ul>
+        <div class="btn-cadastrar"><a class (click)="cadastro()"><span>CADASTRAR</span></a></div>
+      </form>
+    </div>
+  </div>
+  

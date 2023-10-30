@@ -34,6 +34,8 @@ import { CardAgendaProcedimentoComponent } from './card-agenda-procedimento/card
 import { CardExibirProntuarioComponent } from './card-exibir-prontuario/card-exibir-prontuario.component';
 import { CardExibicaoConsultaComponent } from './card-exibicao-consulta/card-exibicao-consulta.component';
 import { CardConsultaPacienteComponent } from './card-consulta-paciente/card-consulta-paciente.component';
+import { CardCadastroLaudoComponent } from './card-cadastro-laudo/card-cadastro-laudo.component';
+import { CardExibicaoLaudoComponent } from './card-exibicao-laudo/card-exibicao-laudo.component';
 
 
 
@@ -69,7 +71,9 @@ import { CardConsultaPacienteComponent } from './card-consulta-paciente/card-con
     CardAgendaProcedimentoComponent,
     CardExibirProntuarioComponent,
     CardExibicaoConsultaComponent,
-    CardConsultaPacienteComponent
+    CardConsultaPacienteComponent,
+    CardCadastroLaudoComponent,
+    CardExibicaoLaudoComponent
   ],
   imports: [
     CommonModule,
@@ -109,7 +113,9 @@ import { CardConsultaPacienteComponent } from './card-consulta-paciente/card-con
     CardAgendaProcedimentoComponent,
     CardExibirProntuarioComponent,
     CardExibicaoConsultaComponent,
-    CardConsultaPacienteComponent
+    CardConsultaPacienteComponent,
+    CardCadastroLaudoComponent,
+    CardExibicaoLaudoComponent
 
   ]
 })

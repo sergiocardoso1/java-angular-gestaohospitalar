@@ -17,6 +17,7 @@ import com.ifba.gestaohospitalar.model.Endereco;
 import com.ifba.gestaohospitalar.model.Especialidade;
 import com.ifba.gestaohospitalar.model.Estado;
 import com.ifba.gestaohospitalar.model.Funcionario;
+import com.ifba.gestaohospitalar.model.Laudo;
 import com.ifba.gestaohospitalar.model.Paciente;
 import com.ifba.gestaohospitalar.model.Procedimento;
 import com.ifba.gestaohospitalar.model.ProcedimentoMarcar;
@@ -26,6 +27,7 @@ import com.ifba.gestaohospitalar.repository.EnderecoRepository;
 import com.ifba.gestaohospitalar.repository.EspecialidadeRepository;
 import com.ifba.gestaohospitalar.repository.EstadoRepository;
 import com.ifba.gestaohospitalar.repository.FuncionarioRepository;
+import com.ifba.gestaohospitalar.repository.LaudoRepository;
 import com.ifba.gestaohospitalar.repository.PacienteRepository;
 import com.ifba.gestaohospitalar.repository.ProcedimentoMarcarRepository;
 import com.ifba.gestaohospitalar.repository.ProcedimentoRepository;
@@ -62,6 +64,9 @@ public class DBServiceImpl {
 
 	@Autowired
 	private ProcedimentoMarcarRepository procedimentoMarcarRepository;
+	
+	@Autowired
+	private LaudoRepository laudoRepository;
 
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	private SimpleDateFormat sdfData = new SimpleDateFormat("HH:mm");
@@ -123,12 +128,16 @@ public class DBServiceImpl {
 
 		funcionarioRepository.saveAll(Arrays.asList(func, func2, func3));
 		
-		Consulta cons = new Consulta(null, func3, sdf.parse("24/10/2023"), sdfData.parse("15:00"), pac2, 300.0);
-		consultaRepository.save(cons);
-		ProcedimentoMarcar procMarcar = new ProcedimentoMarcar(null, proced, sdf.parse("24/10/2023"), sdfData.parse("15:00"), pac2, 300.0);
-		procedimentoMarcarRepository.save(procMarcar);
-
+		Consulta cons = new Consulta(null, func3, sdf.parse("29/10/2023"), sdfData.parse("15:00"), pac2, 300.0);
 		
+		ProcedimentoMarcar procMarcar = new ProcedimentoMarcar(null, proced, sdf.parse("29/10/2023"), sdfData.parse("15:00"), pac2, 300.0);
+		
+
+		Laudo laudo1 = new Laudo(null, cons, "teste test teste");
+		
+		consultaRepository.save(cons);
+		procedimentoMarcarRepository.save(procMarcar);
+		laudoRepository.save(laudo1);
 		
 		
 		

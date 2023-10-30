@@ -1,0 +1,33 @@
+
+<div class="container-selecao-paciente">
+    <div class="selecao-paciente-title">
+      <h3>LAUDO</h3>
+      <hr/>
+    </div>
+  
+    <div class="display-selecao-paciente">
+  
+      <div class="exib-paciente" *ngIf="laudo">
+  
+        <div class="selecao-paciente-nome">
+          <h4>Paciente: </h4>
+          <p>{{ laudo.consulta.paciente.nome }}</p>
+        </div>
+        <div class="selecao-paciente-nome">
+          <h4>CPF: </h4>
+          <p>{{ laudo.consulta.paciente.nome }}</p>
+        </div>
+        <div class="selecao-paciente-nome">
+          <h4>Data da Consulta: </h4>
+          <p>{{ laudo.consulta.dataConsulta }}</p>
+        </div>
+        <div class="selecao-paciente-email">
+          <h4>Descrição: </h4>
+          <p>{{ laudo.descricao  }}</p>
+        </div>
+    
+  
+      </div>
+    </div>
+  </div>
+  

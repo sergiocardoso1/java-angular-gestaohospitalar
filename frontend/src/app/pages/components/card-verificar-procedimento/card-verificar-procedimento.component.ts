@@ -18,7 +18,6 @@ export class CardVerificarProcedimentoComponent {
   constructor(private procedimentoService:ProcedimentoService, private router: Router, private route: ActivatedRoute){
     this.procedimentoService.findAll().subscribe(data => {
       this.procedimentos = data;
-      console.log(this.procedimentos);
     });
     this.procedimentoselecionado = -1;
   
@@ -26,7 +25,6 @@ export class CardVerificarProcedimentoComponent {
   
   verificar(){
     if (this.procedimentoselecionado != -1 && this.data != "") {
-      console.log(['/procedimento/',this.procedimentoselecionado,'/data/',this.data])
       this.router.navigate(['/procedimento/',this.procedimentoselecionado,'data',this.data]);
     } else {
       this.exibirAlerta('Preencha todos campos');

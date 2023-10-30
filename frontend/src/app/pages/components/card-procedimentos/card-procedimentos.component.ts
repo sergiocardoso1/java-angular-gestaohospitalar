@@ -14,7 +14,6 @@ export class CardProcedimentosComponent {
   constructor(private procedimentoService:ProcedimentoService){
     this.procedimentoService.findAll().subscribe(data => {
       this.procedimentos = data;
-      console.log(this.procedimentos);
     });
 
   }

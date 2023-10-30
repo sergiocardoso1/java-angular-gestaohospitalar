@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { especialidade } from 'src/app/models/especialidadeModel';
 import { EspecialidadeService } from 'src/app/services/especialidadeService/especialidade.service';
 
@@ -15,7 +14,6 @@ export class CardEspecialidadesComponent {
   constructor(private especialidadeService:EspecialidadeService){
     this.especialidadeService.findAll().subscribe(data => {
       this.especialidades = data;
-      console.log(this.especialidades);
     });
 
   }

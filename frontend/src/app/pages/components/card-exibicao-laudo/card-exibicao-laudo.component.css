@@ -72,7 +72,6 @@
     transition: all .35s;
     margin-right: 7px;
     border-radius: 3px;
-    cursor: pointer;
   }
   
   .btn-paciente-editar > a span{
@@ -193,7 +192,7 @@
     width: 130px;
     height: 25px;
     line-height: 40px;
-    font-size: 15px;
+    font-size: 18px;
     font-family: sans-serif;
     text-decoration: none;
     color: #333;
@@ -206,8 +205,6 @@
     transition: all .35s;
     margin-right: 7px;
     border-radius: 3px;
-    cursor: pointer;
-
   }
   
   .btn-paciente-matricula > a span{

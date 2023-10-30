@@ -18,7 +18,6 @@ data:string = "";
 constructor(private especialidadeService:EspecialidadeService, private router: Router, private route: ActivatedRoute){
   this.especialidadeService.findAll().subscribe(data => {
     this.especialidades = data;
-    console.log(this.especialidades);
   });
   this.especialidadeselecionada = -1;
 
@@ -26,7 +25,6 @@ constructor(private especialidadeService:EspecialidadeService, private router: R
 
 verificar(){
   if (this.especialidadeselecionada != -1 && this.data != "") {
-    console.log(['/consulta/especialidade/',this.especialidadeselecionada,'/data/',this.data])
     this.router.navigate(['/consulta/especialidade/',this.especialidadeselecionada,'data',this.data]);
   } else {
     this.exibirAlerta('Preencha todos campos');

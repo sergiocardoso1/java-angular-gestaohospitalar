@@ -8,7 +8,8 @@ import com.ifba.gestaohospitalar.model.Laudo;
 public interface LaudoService {
 
 	public Laudo findId(Long id);
-	public List<Laudo> findAllId(Long id);
+	public Laudo findByConsulta(Long id);
+	public List<Laudo> findByPaciente(Long id);
 	public Laudo insert(Laudo obj);
 	public Laudo fromDTO(LaudoNewDTO objDto);
 }

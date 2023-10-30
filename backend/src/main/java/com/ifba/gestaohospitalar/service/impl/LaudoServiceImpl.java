@@ -9,10 +9,7 @@ import org.springframework.stereotype.Service;
 import com.ifba.gestaohospitalar.dto.LaudoNewDTO;
 import com.ifba.gestaohospitalar.model.Consulta;
 import com.ifba.gestaohospitalar.model.Laudo;
-import com.ifba.gestaohospitalar.repository.ConsultaRepository;
-import com.ifba.gestaohospitalar.repository.FuncionarioRepository;
 import com.ifba.gestaohospitalar.repository.LaudoRepository;
-import com.ifba.gestaohospitalar.repository.PacienteRepository;
 import com.ifba.gestaohospitalar.service.ConsultaService;
 import com.ifba.gestaohospitalar.service.LaudoService;
 import com.ifba.gestaohospitalar.service.exceptions.ObjectNotFoundException;
@@ -24,18 +21,7 @@ public class LaudoServiceImpl implements LaudoService{
 	private LaudoRepository repository;
 	
 	@Autowired
-	private ConsultaRepository consultaRepository;
-	
-	@Autowired
 	private ConsultaService consultaService;
-
-	
-	@Autowired
-	private PacienteRepository pacienteRepository;
-	
-
-	@Autowired
-	private FuncionarioRepository funcionarioRepository;
 	
 
 	@Override
@@ -46,16 +32,18 @@ public class LaudoServiceImpl implements LaudoService{
 	}
 
 	@Override
-	public List<Laudo> findAllId(Long id) {
-		return repository.findAllId(id);
+	public Laudo findByConsulta(Long id) {
+		return repository.findByConsulta(id);
+	}
+
+	@Override
+	public List<Laudo> findByPaciente(Long id) {
+		return repository.findByPaciente(id);
 	}
 
 	@Override
 	public Laudo insert(Laudo obj) {
 		obj.setId(null);
-		pacienteRepository.save(obj.getConsulta().getPaciente());
-		funcionarioRepository.save(obj.getConsulta().getMedico());
-		consultaRepository.save(obj.getConsulta());
 		return repository.save(obj);
 		
 	}
@@ -66,5 +54,6 @@ public class LaudoServiceImpl implements LaudoService{
 		Laudo obj = new Laudo(null, cons, objDto.getDescricao());
 		return obj;
 	}
+
 
 }
