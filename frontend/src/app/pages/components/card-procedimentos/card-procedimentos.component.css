@@ -77,19 +77,24 @@
     margin-bottom: 20px;
   }
   
-  .card-especialidades{
-    border: 1px solid black;
-  }
+
 
   .especialidades-planos{
     width: 50%;
   
   }
+
+  .card-especialidades{
+    height: 100%;
+    overflow-y: auto;
+  }
   
-  .especialidades-planos > ul > li{
+  .card-especialidades > ul > li{
     border-radius: 3px;
+    background-color: white;
     border: 1px solid rgb(26, 25, 25);
     margin-bottom: 5px;
+    max-width: 99%;
   }
 
   
@@ -177,6 +182,36 @@
     padding: 5px;
     font-weight: 500;
   }
+  @media (max-width:768px){
+    .paciente-buscar a{
+      font-size: 10px;
+      width: 60px;
+    }
+  }
+
+  @media (max-width:470px){
+    .especialidades > a > h3 {
+      font-size: 17px;
+    }
+
+    .especialidades > a{
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 5px;
+      
+      border-bottom: 0.1px solid rgb(26, 25, 25);
+      color: rgb(26, 25, 25);
+      gap: 1rem;
   
-  
+    
+  }
+
+  .card-especialidades-title > h2{
+    font-size: 25px;
+   
+  }
+}
   

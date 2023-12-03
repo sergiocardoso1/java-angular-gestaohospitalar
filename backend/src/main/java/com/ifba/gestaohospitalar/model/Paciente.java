@@ -52,6 +52,8 @@ public class Paciente implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "prontuario.id")
 	private Prontuario prontuario;
+	
+	private String informacoesMedicas;
 
 	public Paciente() {
 
@@ -165,6 +167,14 @@ public class Paciente implements Serializable {
 
 	public void setProntuario(Prontuario prontuario) {
 		this.prontuario = prontuario;
+	}
+
+	public String getInformacoesMedicas() {
+		return informacoesMedicas;
+	}
+
+	public void setInformacoesMedicas(String informacoesMedicas) {
+		this.informacoesMedicas = informacoesMedicas;
 	}
 
 	@Override

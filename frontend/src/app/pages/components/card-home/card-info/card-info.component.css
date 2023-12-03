@@ -26,7 +26,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 70%;
+  width: 50%;
   height: 400px;
   margin-top: 30px;
 
@@ -68,7 +68,7 @@
   display: flex;
   justify-content: right;
   margin-bottom: 25px;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .card-info-text > p{
@@ -83,4 +83,12 @@
 .card-info-container:hover{
   position: relative;
   top: 1px;
+}
+
+@media (max-width:450px){
+  .card-info{
+    width: 220px;
+  }
+ 
+
 }

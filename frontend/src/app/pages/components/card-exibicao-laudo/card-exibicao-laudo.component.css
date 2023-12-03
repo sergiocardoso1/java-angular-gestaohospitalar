@@ -48,10 +48,11 @@
   
   .paciente-btns{
     display: flex;
-    flex-direction: column;
-    margin-top: 50px;
+    flex-direction: row;
     gap: 10px;
+    margin-top: 10px;
   }
+  
   
   
   .btn-paciente-editar > a{
@@ -72,6 +73,7 @@
     transition: all .35s;
     margin-right: 7px;
     border-radius: 3px;
+    cursor: pointer;
   }
   
   .btn-paciente-editar > a span{
@@ -231,3 +233,24 @@
     width: 100%;
   }
   
+  @media (max-width:768px){
+    .paciente-btns{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .btn-paciente-matricula > a{
+      width: 125px;
+    }
+    .btn-paciente-treino > a {
+      width: 125px;
+    }
+    .btn-paciente-editar > a{
+      width: 125px;
+    }
+    .btn-paciente-excluir > a{
+      width: 125px;
+    }
+   
+  
+  }

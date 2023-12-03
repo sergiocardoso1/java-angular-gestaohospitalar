@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.ifba.gestaohospitalar.dto.PacienteDTO;
@@ -45,6 +47,16 @@ public class PacienteServiceImpl implements PacienteService {
 
 	@Autowired
 	private EnderecoRepository enderecoRepository;
+	
+	@Autowired
+	private ImageService imageService;
+	
+	@Value("${img.prefix.client.profile}")
+	private String prefix;
+	
+	@Value("${img.profile.size}")
+	private Integer size;
+	
 
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -61,17 +73,22 @@ public class PacienteServiceImpl implements PacienteService {
 
 	@Override
 	public List<Paciente> findAll() {
-		return repository.findAll();
+		return repository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
 	}
-	
+
+	@Override
+	public List<Paciente> findMes(int mes) {
+		return repository.findPacientesByMonth(mes);
+	}
+
 	public long quantidadePacientes() {
 		return repository.qntPacientes();
 	}
-	
+
 	public List<Paciente> findName(String name) {
 		return repository.findByNameContaining(name.toLowerCase());
 	}
-	
+
 	@Override
 	public Paciente findByProntuario(Long id) {
 		return repository.findByProntuario(id);
@@ -117,6 +134,7 @@ public class PacienteServiceImpl implements PacienteService {
 		newEnd.setNumero(obj.getEndereco().getNumero());
 		newEnd.setCidade(obj.getEndereco().getCidade());
 		newObj.setEndereco(newEnd);
+		newObj.setInformacoesMedicas(obj.getInformacoesMedicas());
 	}
 
 	@Override
@@ -138,15 +156,19 @@ public class PacienteServiceImpl implements PacienteService {
 			cid.setNome(objDto.getCidade());
 			cid.setEstado(new Estado(null, objDto.getEstado()));
 		}
-		
-		
+
 		Date data = formatoEntrada.parse(objDto.getDataDeNascimento());
-        String dataFormatada = formatoSaida.format(data);
+		String dataFormatada = formatoSaida.format(data);
 		Endereco end = new Endereco(null, objDto.getLogradouro(), objDto.getNumero(), objDto.getCep(),
 				objDto.getBairro(), objDto.getComplemento(), cid);
 		Paciente obj = new Paciente(objDto.getId(), objDto.getNome(), objDto.getEmail(), sdf.parse(dataFormatada),
 				objDto.getConvenio(), objDto.getTelefone(), null, null, end);
+		if (objDto.getInformacoesMedicas().length() > 0) {
+			obj.setInformacoesMedicas(objDto.getInformacoesMedicas());
+		}
+
 		return obj;
+
 	}
 
 	@Override
@@ -155,29 +177,51 @@ public class PacienteServiceImpl implements PacienteService {
 		Estado estado = new Estado();
 
 		if (cidadeService.findByName(objDto.getCidade()) != null) {
-			cid = (cidadeService.findByName(objDto.getCidade()));
-
+			cid = cidadeService.findByName(objDto.getCidade());
 		} else if (estadoService.findByName(objDto.getEstado()) != null) {
 			cid.setNome(objDto.getCidade());
-			estado = (estadoService.findByName(objDto.getEstado()));
+			estado = estadoService.findByName(objDto.getEstado());
 			cid.setEstado(estado);
-
-		}
-
-		else {
+		} else {
 			cid.setNome(objDto.getCidade());
 			cid.setEstado(new Estado(null, objDto.getEstado()));
 		}
 
 		Date data = formatoEntrada.parse(objDto.getDataDeNascimento());
-        String dataFormatada = formatoSaida.format(data);
+		String dataFormatada = formatoSaida.format(data);
 		Endereco end = new Endereco(null, objDto.getLogradouro(), objDto.getNumero(), objDto.getCep(),
 				objDto.getBairro(), objDto.getComplemento(), cid);
 		Paciente obj = new Paciente(null, objDto.getNome(), objDto.getEmail(), sdf.parse(dataFormatada),
-				objDto.getConvenio(), objDto.getTelefone(), objDto.getCpf(), new Date() ,end);
+				objDto.getConvenio(), objDto.getTelefone(), objDto.getCpf(), new Date(), end);
+
+		if (objDto.getInformacoesMedicas().length() > 0) {
+			obj.setInformacoesMedicas(objDto.getInformacoesMedicas());
+		}
+
 		return obj;
+
 	}
 
+//	public URI uploadProfilePicture(MultipartFile multipartFile, Long id) {
+//	    Paciente paciente = findId(id);
+//	    
+//	    try {
+//	        BufferedImage jpgImage = imageService.getJpgImageFromFile(multipartFile);
+//	        jpgImage = imageService.cropSquare(jpgImage);
+//	        jpgImage = imageService.resize(jpgImage, size);
+//
+//	        // Salvar imagem como bytes no objeto Paciente
+//	        paciente.setFoto(imageService.getImageBytes(jpgImage, "jpg"));
+//
+//	        // Atualizar o paciente no banco de dados
+//	        repository.save(paciente);
+//
+//	        // Retornar a URI da imagem (opcional)
+//	        return buildImageUri(paciente.getId() + ".jpg");
+//	    } catch (IOException e) {
+//	        throw new RuntimeException("Erro ao salvar a imagem", e);
+//	    }
+//	}
 
 
 }

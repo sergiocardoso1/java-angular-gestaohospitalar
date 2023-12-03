@@ -4,6 +4,16 @@
       <h3>PRONTUÁRIO</h3>
       <hr/>
     </div>
+
+    
+    <div class="btns">
+      <div class="paciente-btns">
+        
+        <div class="btn-paciente-editar">
+          <a [routerLink]="['/consultas/paciente',paciente.id]"><span>CONSULTAS</span></a>
+        </div>
+      </div>
+    </div>
   
     <div class="display-selecao-paciente">
   
@@ -29,16 +39,6 @@
   
       </div>
 
-      <div class="btns">
-        <div class="paciente-btns">
-          
-          <div class="btn-paciente-editar">
-            <a [routerLink]="['/consultas/paciente',paciente.id]"><span>CONSULTAS</span></a>
-          </div>
-        
-        </div>
-  
-      </div>
     </div>
   </div>
   

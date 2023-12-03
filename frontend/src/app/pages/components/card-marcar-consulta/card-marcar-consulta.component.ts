@@ -33,7 +33,7 @@ export class CardMarcarConsultaComponent implements OnInit{
       this.consultaService.findHoursByDate(this.paramValueData, funcionarioConsultaDTO.id).subscribe((data: string[]) => {
         this.horarioResposta = data;
         funcionarioConsultaDTO.horario = this.removeRepetidos(this.horario, data);
-        this.sleep(2000)
+        this.sleep(7000)
       });
     });
       

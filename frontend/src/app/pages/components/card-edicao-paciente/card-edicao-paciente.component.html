@@ -1,6 +1,6 @@
 <div class="container-card-cadastro-aluno">
     <div class="title-cadastro-aluno">
-      <h2>EDIÇAO DO PACIENTE {{nome}}</h2>
+      <h2>EDIÇAO DO PACIENTE</h2>
     </div>
   
     <div class="cadastro-aluno-hr">
@@ -38,6 +38,11 @@
           <li>
             <div class="input-data-nascimento">
               <input type="date" name="dataNascimento" placeholder="Data de Nascimento" class="dataNascimento" [(ngModel)]="dataDeNascimento">
+            </div>
+          </li>
+          <li>
+            <div class="input-nome">
+              <textarea [(ngModel)]="informacoesMedicas" name="descricao" required placeholder="Info. Médicas"></textarea>
             </div>
           </li>
           <li>

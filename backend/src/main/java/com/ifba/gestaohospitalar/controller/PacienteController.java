@@ -53,12 +53,15 @@ public class PacienteController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Paciente> insert(@Valid @RequestBody PacienteNewDTO objDto) throws ParseException {
-		Paciente obj = service.fromDTO(objDto);
-		obj.setId(null);
-		obj = service.insert(obj);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
-		return ResponseEntity.created(uri).build();
+	    Paciente obj = service.fromDTO(objDto);
+	    obj.setId(null);
+
+
+	    obj = service.insert(obj);
+	    URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
+	    return ResponseEntity.created(uri).build();
 	}
+
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Paciente> update(@Valid @RequestBody PacienteDTO objDto, @PathVariable Long id) throws ParseException{

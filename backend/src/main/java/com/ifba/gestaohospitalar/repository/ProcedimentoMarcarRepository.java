@@ -23,4 +23,16 @@ public interface ProcedimentoMarcarRepository extends JpaRepository<Procedimento
 	@Query("SELECT COUNT(p) FROM ProcedimentoMarcar p WHERE p.dataProcedimento = :data")
 	long qntProcedimentosHoje(Date data);
 	
+	@Query("SELECT pm.procedimento.nome " +
+	           "FROM ProcedimentoMarcar pm " +
+	           "WHERE pm.dataProcedimento >= :thirtyDaysAgo " +
+	           "GROUP BY pm.procedimento.nome " +
+	           "ORDER BY COUNT(pm.procedimento) DESC")
+	    List<String> findProcedimentosMaisFeitosNosUltimos30Dias(@Param("thirtyDaysAgo") Date thirtyDaysAgo);
+	
+	@Query("SELECT COUNT(p) FROM ProcedimentoMarcar p WHERE MONTH(p.dataProcedimento) = :mes AND YEAR(p.dataProcedimento) = :ano")
+    int countProcedimentosByMonthAndYear(@Param("mes") int mes, @Param("ano") int ano);
+
+    @Query("SELECT COALESCE(SUM(p.valor), 0) FROM ProcedimentoMarcar p WHERE MONTH(p.dataProcedimento) = :mes AND YEAR(p.dataProcedimento) = :ano")
+    double sumValorByMonthAndYear(@Param("mes") int mes, @Param("ano") int ano);
 }

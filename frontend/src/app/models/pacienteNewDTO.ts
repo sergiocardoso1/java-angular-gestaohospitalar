@@ -12,5 +12,6 @@ export type PacienteNewDTO = {
   bairro:string,
   cidade:string,
   estado:string,
+  informacoesMedicas:string
 
 }

@@ -3,6 +3,8 @@ package com.ifba.gestaohospitalar.service.impl;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -139,7 +141,19 @@ public class ConsultaServiceImpl implements ConsultaService{
 		return horas;
 	}
 
+	public List<String> findEspecialidadesMaisFeitasNosUltimos30Dias() {
+        Date thirtyDaysAgo = Date.from(Instant.now().minus(30, ChronoUnit.DAYS));
+        return repository.findEspecialidadesMaisFeitasNosUltimos30Dias(thirtyDaysAgo);
+    }
 	
+	@Override
+	public int findQntMes(int mes, int ano) {
+		return repository.countConsultasByMonthAndYear(mes, ano);
+	}
 
+	@Override
+	public double valormes(int mes, int ano) {
+		return repository.sumValorByMonthAndYear(mes, ano);
+	}
 
 }

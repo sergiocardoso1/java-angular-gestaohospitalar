@@ -24,4 +24,7 @@ public interface PacienteRepository extends JpaRepository<Paciente, Long>{
 	
 	@Query("SELECT COUNT(p) FROM Paciente p")
 	long qntPacientes();
+	
+	@Query("SELECT p FROM Paciente p WHERE MONTH(p.dataDeNascimento) = :mes ORDER BY DAY(p.dataDeNascimento) ASC")
+	List<Paciente> findPacientesByMonth(@Param("mes") int mes);
 }

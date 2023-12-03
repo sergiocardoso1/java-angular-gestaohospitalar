@@ -1,16 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { cidade } from 'src/app/models/cidadeModel';
 import { consulta } from 'src/app/models/consultaModel';
-import { endereco } from 'src/app/models/enderecoModel';
-import { estado } from 'src/app/models/estadoModel';
 import { Laudo } from 'src/app/models/laudoModel';
-import { Paciente } from 'src/app/models/pacienteModel';
-import { Prontuario } from 'src/app/models/prontuarioModel';
 import { ProntuarioNewDTO } from 'src/app/models/prontuarioNewDTO';
 import { ConsultaService } from 'src/app/services/consultaService/consulta.service';
 import { LaudoService } from 'src/app/services/laudoService/laudo.service';
-import { PacienteService } from 'src/app/services/pacienteService/paciente.service';
 import { ProntuarioService } from 'src/app/services/prontuarioService/prontuario.service';
 
 @Component({

@@ -10,5 +10,6 @@ export type Paciente = {
   dataDeNascimento:string,
   telefone:string,
   endereco:endereco,
-  prontuario:Prontuario
+  prontuario:Prontuario,
+  informacoesMedicas:string
 }

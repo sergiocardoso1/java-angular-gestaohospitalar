@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/authService/auth.service';
 })
 export class CardEsqueceuSenhaComponent implements OnInit{
 
-  email:string = "sergiocardosodeveloper@gmail.com";
+  email:string = "sergioifbaiano@hotmail.com";
 
   constructor(private authService:AuthService, private router: Router, private route: ActivatedRoute){
 

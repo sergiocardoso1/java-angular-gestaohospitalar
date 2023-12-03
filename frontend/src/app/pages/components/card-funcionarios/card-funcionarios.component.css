@@ -137,13 +137,18 @@
   
   .paciente-text{
     width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   
   .paciente-text > ul > li{
+    background-color: white;
     border-radius: 3px;
     border: 1px solid rgb(26, 25, 25);
     width: 100%;
     margin-bottom: 5px;
+    max-width: 99%;
   }
   
   .card-paciente{
@@ -183,3 +188,9 @@
     font-weight: 500;
   }
   
+  @media (max-width:768px){
+    .paciente-buscar a{
+      font-size: 10px;
+      width: 60px;
+    }
+  }

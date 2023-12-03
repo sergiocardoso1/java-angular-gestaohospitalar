@@ -27,7 +27,7 @@ width: 100%;
 }
 
 .container-selecionar-tipo{
-    margin-top: 40px;
+    margin-top: 15px;
     height: 50%;
     width: 100%;
     max-width: 99%;
@@ -43,7 +43,7 @@ width: 100%;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 6px;
     background-color: rgb(60, 123, 240);
-    height: 90%;
+    height: 60%;
     width: 80%;
     display: flex;
     justify-content: center;
@@ -64,15 +64,16 @@ width: 100%;
 .consulta:hover{
     position: relative;
     top: 2px;
-    height: 94%;
+    height: 70%;
     width: 84%;
-
+    background-color: rgb(42, 86, 161);
+    
 }
 
 .procedimento{
     margin: 2px;
     border: 1px solid rgb(255, 255, 255);
-    height: 90%;
+    height: 60%;
     width: 80%;
     border-radius: 6px;
     background-color: rgb(60, 123, 240);
@@ -86,8 +87,9 @@ width: 100%;
 .procedimento:hover{
     position: relative;
     top: 2px;
-    height: 94%;
+    height: 70%;
     width: 84%;
+    background-color: rgb(42, 86, 161);
 }
 
 .consulta > h2{
@@ -101,3 +103,35 @@ width: 100%;
     color: white;
     max-width: 95%;
 }
+
+
+@media (max-width:768px){
+    .container-selecionar-tipo{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }  
+    .consulta{
+        height: 250px;
+        width: 95%;
+    }
+    .procedimento{
+        height: 250px;
+        width: 95%;
+    }
+    .consulta:hover{
+        height: 255px;
+        width: 96%;
+    }
+    .procedimento:hover{
+        height: 255px;
+        width: 96%;
+    }
+
+
+
+
+}
+
+
+

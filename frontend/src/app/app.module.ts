@@ -36,6 +36,8 @@ import { ExibicaoConsultaModule } from './pages/exibicao-consulta/exibicao-consu
 import { ExibicaoConsultaPacienteModule } from './pages/exibicao-consulta-paciente/exibicao-consulta-paciente.module';
 import { CadastroLaudoModule } from './pages/cadastro-laudo/cadastro-laudo.module';
 import { ExibicaoLaudoModule } from './pages/exibicao-laudo/exibicao-laudo.module';
+import { RelatoriosModule } from './pages/relatorios/relatorios.module';
+import { ExibirProcedimentoModule } from './pages/exibir-procedimento/exibir-procedimento.module';
 
 
 @NgModule({
@@ -78,7 +80,9 @@ import { ExibicaoLaudoModule } from './pages/exibicao-laudo/exibicao-laudo.modul
     ExibicaoConsultaModule,
     ExibicaoConsultaPacienteModule,
     CadastroLaudoModule,
-    ExibicaoLaudoModule
+    ExibicaoLaudoModule,
+    RelatoriosModule,
+    ExibirProcedimentoModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true }

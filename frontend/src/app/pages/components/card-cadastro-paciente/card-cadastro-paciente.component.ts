@@ -26,6 +26,7 @@ export class CardCadastroPacienteComponent implements OnInit{
   logradouro:string = '';
   complemento:string = '';
   numero:string = '';
+  informacoesMedicas:string = '';
 
 
 
@@ -103,7 +104,8 @@ export class CardCadastroPacienteComponent implements OnInit{
         logradouro: this.logradouro,
         numero: this.numero,
         telefone: this.telefone,
-        convenio: this.convenio
+        convenio: this.convenio,
+        informacoesMedicas: this.informacoesMedicas
       }
       console.log(this.pacienteService.create(objDto).subscribe(
         response => {

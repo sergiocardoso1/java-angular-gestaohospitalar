@@ -4,6 +4,33 @@
       <h3>PACIENTE</h3>
       <hr/>
     </div>
+
+    <div class="btns">
+      <div class="paciente-btns">
+        <div class="btn-paciente-matricula">
+          <a *ngIf="paciente.prontuario == null; then alertaBlock else linkBlock"></a>
+
+            <ng-template #alertaBlock>
+              <a (click)="alerta()"><span>PRONTUÁRIO</span></a>
+            </ng-template>
+
+            <ng-template #linkBlock>
+              <a [routerLink]="['/prontuarios', paciente.prontuario.id]"><span>PRONTUÁRIOS</span></a>
+            </ng-template>
+
+        </div>
+        <div class="btn-paciente-registro">
+          <a (click)="gerarPDF()"><span>REGISTRO</span></a>
+        </div>
+        <div class="btn-paciente-editar">
+          <a [routerLink]="['/pacientes',paciente.id,'editar']"><span>EDITAR</span></a>
+        </div>
+        <div class="btn-paciente-excluir">
+          <a (click)="deleteAluno(paciente.id)"><span>EXCLUIR</span></a>
+        </div>
+      </div>
+
+    </div>
   
     <div class="display-selecao-paciente">
   
@@ -32,6 +59,10 @@
         <div class="selecao-paciente-dataNascimento">
           <h4>Data de nascimento: </h4>
           <p>{{ paciente.dataDeNascimento }}</p>
+        </div>
+        <div class="selecao-telefone" *ngIf="paciente.informacoesMedicas != null">
+          <h4>Info. Médicas: </h4>
+          <p>{{ paciente.informacoesMedicas }}</p>
         </div>
         
   
@@ -70,29 +101,7 @@
         </div>
       </div>
   
-      <div class="btns">
-        <div class="paciente-btns">
-          <div class="btn-paciente-matricula">
-            <a *ngIf="paciente.prontuario == null; then alertaBlock else linkBlock"></a>
-
-              <ng-template #alertaBlock>
-                <a (click)="alerta()"><span>PRONTUÁRIO</span></a>
-              </ng-template>
-
-              <ng-template #linkBlock>
-                <a [routerLink]="['/prontuarios', paciente.prontuario.id]"><span>PRONTUÁRIOS</span></a>
-              </ng-template>
-
-          </div>
-          <div class="btn-paciente-editar">
-            <a [routerLink]="['/pacientes',paciente.id,'editar']"><span>EDITAR</span></a>
-          </div>
-          <div class="btn-paciente-excluir">
-            <a (click)="deleteAluno(paciente.id)"><span>EXCLUIR</span></a>
-          </div>
-        </div>
-  
-      </div>
+      
     </div>
   </div>
   

@@ -1,0 +1,68 @@
+
+<div class="container-selecao-paciente">
+    <div class="selecao-paciente-title">
+      <h3>PROCEDIMENTO</h3>
+      <hr/>
+    </div>
+
+    <div class="btns" >
+      <div class="paciente-btns">
+          
+        <div class="btn-paciente-editar">
+          <a (click)="gerarPDF()"><span>Relatório</span></a>
+        </div>
+      </div>
+
+    </div>
+  
+    <div class="display-selecao-paciente" *ngIf="procedimento">
+  
+      <div class="exib-paciente" >
+  
+        <div class="selecao-paciente-nome">
+          <h4>Paciente: </h4>
+          <p>{{ procedimento.paciente.nome }}</p>
+        </div>
+        <div class="selecao-paciente-email">
+          <h4>Email: </h4>
+          <p>{{ procedimento.paciente.email }}</p>
+        </div>
+        <div class="selecao-paciente-email">
+          <h4>CPF: </h4>
+          <p>{{ procedimento.paciente.cpf }}</p>
+        </div>
+        <div class="selecao-telefone">
+          <h4>Telefone: </h4>
+          <p>{{ procedimento.paciente.telefone }}</p>
+        </div>
+        <div class="selecao-telefone">
+            <h4>Convenio: </h4>
+            <p>{{ procedimento.paciente.convenio }}</p>
+        </div>
+        <div class="selecao-paciente-dataNascimento">
+          <h4>Data de nascimento: </h4>
+          <p>{{ procedimento.paciente.dataDeNascimento }}</p>
+        </div>
+      
+        <div class="selecao-paciente-endereco">
+          <h4>Procedimento</h4>
+          <hr/>
+          <div class="selecao-telefone">
+            <h4>Procedimento realizado: </h4>
+            <p>{{ procedimento.procedimento.nome }}</p>
+          </div>
+          <div class="selecao-telefone">
+            <h4>Valor: </h4>
+            <p>{{ procedimento.valor }}</p>
+          </div>
+  
+        </div>
+
+        
+        
+      </div>
+  
+     
+    </div>
+  </div>
+  

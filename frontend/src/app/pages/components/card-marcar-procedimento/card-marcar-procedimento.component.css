@@ -10,13 +10,13 @@
   }
   
 .card-especialidades-title > h2{
-color: rgb(26, 25, 25);
-display: flex;
-align-items: center;
-font-size: 30px;
-font-weight: 900;
-font-family: cursive;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: rgb(26, 25, 25);
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 900;
+    font-family: cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .especialidades-hr{
@@ -27,7 +27,13 @@ width: 100%;
     width: 40%;
     height: 2px;
     background-color: black;
-    margin-top: 25px;
+    margin-top: 15px;
+}
+
+.container-max-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container-box{
@@ -36,7 +42,11 @@ width: 100%;
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%;
+    width: 500px;
+    border: 2px solid white;
+    border-radius: 6px;
+    background-color: rgb(60, 123, 240);
+    padding: 5px;
 }
 
 .box{
@@ -46,6 +56,16 @@ width: 100%;
     align-items: center;
     height: 100%;
     width: 100%;
+}
+
+.box > h3{
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 900;
+    font-family: cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .info-horario{
     display: flex;
@@ -64,6 +84,19 @@ width: 100%;
     margin-top: 10px;
     cursor: pointer;
     
+    
+}
+
+.horarios > b{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 7px;
+}
+
+.horarios > b:hover{
+    transition: 0.5s;
+    color: rgb(21, 102, 184);
+    background-color: rgb(192, 210, 230);
 }
 .botao-marcar{
     display: flex;

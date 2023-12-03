@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="card-especialidades-title">
+        <h2>RELATÓRIOS</h2>
+      </div>
+    
+      <div class="especialidades-hr">
+        <hr/>
+      </div>
+
+    <div class="container-box">
+        <fieldset class="buscar"> 
+            <div class="inputdata" *ngIf="opcaoSelecionada == 7">
+                <input type="date" name="data" placeholder="Data" class="data" [(ngModel)]="data" >
+            </div>
+            <div class="inputdata" *ngIf="opcaoSelecionada == 8 || opcaoSelecionada == 9">
+                <input type="number" name="data" placeholder="Selecione mês" class="data" [(ngModel)]="mes" max="12" min="1">
+            </div>         
+                
+            <div class="inputdata2" *ngIf="opcaoSelecionada == 9" >
+                <input type="number" name="data" placeholder="Selecione o ano" class="data" [(ngModel)]="ano" max="{{anoAtual}}" min="2020">
+            </div>
+            
+            
+            <div class="dados">
+                
+                    <select id="especialidade" [(ngModel)]="opcaoSelecionada" name="especialidadeSelecionada">
+                    <option value="-1" disabled>Selecione Relatório</option>
+                    <option [value]="1">Especialidades</option>
+                    <option [value]="2">Tipos de Procedimento</option>
+                    <option [value]="3">Consultas</option>
+                    <option [value]="4">Procedimentos</option>
+                    <option [value]="5">Pacientes</option>
+                    <option [value]="6">Funcionários</option>
+                    <option [value]="7">Consultas por Data</option>
+                    <option [value]="8">Paciente por Mês</option>
+                    <option [value]="9">Caixa</option>
+                    </select>
+            </div>
+
+            
+            
+    
+            <div class="container-buscar">
+                <div class="paciente-cadastrar">
+                    <a (click)="gerarPDF()"><span>GERAR</span></a>
+                </div>
+            </div>
+    
+        </fieldset>
+    </div>
+    
+</div>

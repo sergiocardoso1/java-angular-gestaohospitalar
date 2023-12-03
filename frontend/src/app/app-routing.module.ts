@@ -30,6 +30,9 @@ import { ExibicaoConsultaComponent } from './pages/exibicao-consulta/exibicao-co
 import { ExibicaoConsultaPacienteComponent } from './pages/exibicao-consulta-paciente/exibicao-consulta-paciente.component';
 import { CadastroLaudoComponent } from './pages/cadastro-laudo/cadastro-laudo.component';
 import { ExibicaoLaudoComponent } from './pages/exibicao-laudo/exibicao-laudo.component';
+import { ExibicaoSelecaoFuncionarioComponent } from './pages/exibicao-selecao-funcionario/exibicao-selecao-funcionario.component';
+import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
+import { ExibirProcedimentoComponent } from './pages/exibir-procedimento/exibir-procedimento.component';
 
 
 const routes: Routes = [
@@ -58,10 +61,12 @@ const routes: Routes = [
   {path:'especialidades', component: EspecialidadeComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'procedimentos/cadastro', component: CadastroProcedimentoComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'procedimentos', component: ProcedimentosComponent, pathMatch:"full", canActivate: [AuthGuard] },
+  {path:'procedimento/:id', component: ExibirProcedimentoComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'funcionarios', component: FuncionariosComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'funcionarios/cadastro', component: CadastroFuncionarioComponent, pathMatch:"full", canActivate: [AuthGuard] },
   {path:'funcionarios/:id/editar', component: EdicaoFuncionarioComponent, pathMatch:"full", canActivate: [AuthGuard] },
-  {path:'funcionarios/:id', component: CardExibirFuncionarioComponent, pathMatch:"full", canActivate: [AuthGuard] },
+  {path:'funcionarios/:id', component: ExibicaoSelecaoFuncionarioComponent, pathMatch:"full", canActivate: [AuthGuard] },
+  {path:'relatorios', component: RelatoriosComponent , pathMatch:"full", canActivate: [AuthGuard] },
 
 
 

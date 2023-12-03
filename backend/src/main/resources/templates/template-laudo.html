@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CLI LIFE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .details {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        .details > h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .details > h4 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .details > p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .details > h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        span{
+			font-weight: 300;
+		}
+    </style>
+</head>
+<body>
+    <div class="details">
+        <h1>CLI LIFE</h1>
+        <h4 th:text="${#dates.format(datageracao, 'dd-MM-yyyy')}"></h4>
+
+        <h2>Laudo da consulta do Paciente:</h2>
+        <hr></hr>
+        <h4>Nome: <span th:text="${laudo.consulta.paciente.nome}"></span></h4>
+        <h4>CPF: <span th:text="${laudo.consulta.paciente.cpf}"></span></h4>
+        <h4>Data de Nascimento: <span th:text="${#dates.format(laudo.consulta.paciente.dataDeNascimento, 'dd-MM-yyyy')}"></span></h4>
+        <h4>Telefone: <span th:text="${laudo.consulta.paciente.telefone}"></span></h4>
+        <h3>Endereço:</h3>
+        <h4>Rua: <span th:text="${laudo.consulta.paciente.endereco.logradouro}"></span></h4>
+        <h4>Bairro: <span th:text="${laudo.consulta.paciente.endereco.bairro}"></span></h4>
+        <h4>Número: <span th:text="${laudo.consulta.paciente.endereco.numero}"></span></h4>
+        <h4>Cep: <span th:text="${laudo.consulta.paciente.endereco.cep}"></span></h4>
+        <h4>Cidade: <span th:text="${laudo.consulta.paciente.endereco.cidade.nome}"></span></h4>
+        <h4>Estado: <span th:text="${laudo.consulta.paciente.endereco.cidade.estado.nome}"></span></h4>
+        <hr></hr>
+       	<h3>CONSULTA:</h3>
+       	<h4>Medico: <span th:text="${laudo.consulta.medico.nome}"></span></h4>
+       	<h4>Especialidade: <span th:text="${laudo.consulta.medico.especialidade.nome}"></span></h4>
+       	<h4>Data da Consulta: <span th:text="${#dates.format(laudo.consulta.dataConsulta, 'dd-MM-yyyy')}"></span></h4>
+       	<h4>Valor: <span th:text="${laudo.consulta.valor}"></span></h4>
+       	<h4>Laudo: <span th:text="${laudo.descricao}"></span></h4>
+    </div>
+</body>
+</html>

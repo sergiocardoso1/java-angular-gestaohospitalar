@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CLI LIFE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .details {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        .details > h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .details > h4 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .details > p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .details > h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        span{
+			font-weight: 300;
+		}
+    </style>
+</head>
+<body>
+    <div class="details">
+        <h1>CLI LIFE</h1>
+        <h4 th:text="${#dates.format(datageracao, 'dd-MM-yyyy')}"></h4>
+
+        <h2>Relatório de cadastro do paciente:</h2>
+        
+        <h4>Nome: <span th:text="${paciente.nome}"></span></h4>
+        <h4>CPF: <span th:text="${paciente.cpf}"></span></h4>
+        <h4>Data de Nascimento: <span th:text="${#dates.format(paciente.dataDeNascimento, 'dd-MM-yyyy')}"></span></h4>
+        <h4>Telefone: <span th:text="${paciente.telefone}"></span></h4>
+        <h3>Endereço:</h3>
+        <h4>Rua: <span th:text="${paciente.endereco.logradouro}"></span></h4>
+        <h4>Bairro: <span th:text="${paciente.endereco.bairro}"></span></h4>
+        <h4>Número: <span th:text="${paciente.endereco.numero}"></span></h4>
+        <h4>Cep: <span th:text="${paciente.endereco.cep}"></span></h4>
+        <h4>Cidade: <span th:text="${paciente.endereco.cidade.nome}"></span></h4>
+        <h4>Estado: <span th:text="${paciente.endereco.cidade.estado.nome}"></span></h4>
+       
+    </div>
+</body>
+</html>

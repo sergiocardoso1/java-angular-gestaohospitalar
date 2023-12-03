@@ -23,6 +23,7 @@ public class LaudoServiceImpl implements LaudoService{
 	@Autowired
 	private ConsultaService consultaService;
 	
+	
 
 	@Override
 	public Laudo findId(Long id) {

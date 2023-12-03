@@ -4,6 +4,18 @@
       <h3>FUNCIONARIO</h3>
       <hr/>
     </div>
+
+    <div class="btns">
+      <div class="paciente-btns">
+        <div class="btn-paciente-editar">
+          <a [routerLink]="['/funcionarios',funcionario.id,'editar']"><span>EDITAR</span></a>
+        </div>
+        <div class="btn-paciente-excluir">
+          <a (click)="deleteAluno(funcionario.id)"><span>EXCLUIR</span></a>
+        </div>
+      </div>
+
+    </div>
   
     <div class="display-selecao-paciente">
   
@@ -82,17 +94,7 @@
         </div>
       </div>
   
-      <div class="btns">
-        <div class="paciente-btns">
-          <div class="btn-paciente-editar">
-            <a [routerLink]="['/funcionarios',funcionario.id,'editar']"><span>EDITAR</span></a>
-          </div>
-          <div class="btn-paciente-excluir">
-            <a (click)="deleteAluno(funcionario.id)"><span>EXCLUIR</span></a>
-          </div>
-        </div>
-  
-      </div>
+      
     </div>
   </div>
   

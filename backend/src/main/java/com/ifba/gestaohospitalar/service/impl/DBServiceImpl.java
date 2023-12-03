@@ -17,7 +17,6 @@ import com.ifba.gestaohospitalar.model.Endereco;
 import com.ifba.gestaohospitalar.model.Especialidade;
 import com.ifba.gestaohospitalar.model.Estado;
 import com.ifba.gestaohospitalar.model.Funcionario;
-import com.ifba.gestaohospitalar.model.Laudo;
 import com.ifba.gestaohospitalar.model.Paciente;
 import com.ifba.gestaohospitalar.model.Procedimento;
 import com.ifba.gestaohospitalar.model.ProcedimentoMarcar;
@@ -68,6 +67,7 @@ public class DBServiceImpl {
 	@Autowired
 	private LaudoRepository laudoRepository;
 
+
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	private SimpleDateFormat sdfData = new SimpleDateFormat("HH:mm");
 
@@ -81,7 +81,7 @@ public class DBServiceImpl {
 		Cidade c2 = new Cidade(null, "São Paulo", est2);
 		Cidade c3 = new Cidade(null, "Campinas", est2);
 		Cidade c4 = new Cidade(null, "Valença", est3);
-
+		
 		est1.getCidades().addAll(Arrays.asList(c1));
 		est2.getCidades().addAll(Arrays.asList(c2, c3));
 		est3.getCidades().addAll(Arrays.asList(c4));
@@ -99,45 +99,60 @@ public class DBServiceImpl {
 
 		pacienteRepository.save(pac1);
 
-		Paciente pac2 = new Paciente(null, "Júlio Cesar", "jdsajdsa@gmail.com", sdf.parse("26/04/1998"),
-				"Convenio", "75981616503", "64285214075", new Date(), endereco1);
+		Paciente pac2 = new Paciente(null, "Júlio Cesar", "jdsajdsa@gmail.com", sdf.parse("29/06/1999"),
+				"Convenio", "75981616503", "38239724302", new Date(), endereco1);
 
 		pacienteRepository.save(pac2);
+		
+		Paciente pac3 = new Paciente(null, "Marco Aurélio", "jdsa2332sa@gmail.com", sdf.parse("29/04/1999"),
+				"Convenio", "75981616503", "50767273800", new Date(), endereco1);
+		
+		pacienteRepository.save(pac3);
+		
+		Paciente pac4 = new Paciente(null, "Ronaldo Nazário", "jdsajds555a@gmail.com", sdf.parse("22/04/1999"),
+				"Convenio", "75981616503", "41208351206", new Date(), endereco1);
+		
+		pacienteRepository.save(pac4);
 
 		Especialidade espec = new Especialidade(null, "Ortopedista");
-		especialidadeRepository.save(espec);
+		Especialidade espec2 = new Especialidade(null, "Nutricionista");
+		Especialidade espec3 = new Especialidade(null, "Cardiologista");
+		Especialidade espec4 = new Especialidade(null, "Médico Geral");
+		especialidadeRepository.saveAll(Arrays.asList(espec, espec2, espec3, espec4));
 
 		Funcionario func = new Funcionario(null, "Sérgio", "sergioifbaiano@hotmail.com",
 				bCryptPasswordEncoder.encode("123"), endereco1, sdf.parse("26/08/2010"), "75981616503");
 		func.addPerfil(Perfil.ADMIN);
 
-		Funcionario func2 = new Funcionario(null, "Sérgio", "sergiocardosodeveloper@gmail.com",
-				bCryptPasswordEncoder.encode("123"), endereco1, sdf.parse("26/08/2010"), "75981616503");
+		Funcionario func2 = new Funcionario(null, "Pedro", "sergiocardosodeveloper@gmail.com",
+				bCryptPasswordEncoder.encode("123"), endereco1, sdf.parse("22/02/2010"), "75981616503");
 		func2.addPerfil(Perfil.MEDICO);
 		func2.setCrm("123213");
 		func2.setEspecialidade(espec);
 
 		Funcionario func3 = new Funcionario(null, "Victor", "victortester@gmail.com",
-				bCryptPasswordEncoder.encode("123"), endereco1, sdf.parse("26/08/2010"), "75981616503");
+				bCryptPasswordEncoder.encode("123"), endereco1, sdf.parse("26/08/2012"), "75981616503");
 		func3.addPerfil(Perfil.MEDICO);
 		func3.setCrm("123213");
 		func3.setEspecialidade(espec);
 
 		Procedimento proced = new Procedimento(null, "Plastica");
-		procedimentoRepository.save(proced);
+		Procedimento proced2 = new Procedimento(null, "Radiografia");
+		Procedimento proced3 = new Procedimento(null, "Sonogafia");
+		Procedimento proced4 = new Procedimento(null, "Eletrocardiograma");
+		procedimentoRepository.saveAll(Arrays.asList(proced, proced2, proced3, proced4));
 
 		funcionarioRepository.saveAll(Arrays.asList(func, func2, func3));
 		
-		Consulta cons = new Consulta(null, func3, sdf.parse("29/10/2023"), sdfData.parse("15:00"), pac2, 300.0);
+		Consulta cons = new Consulta(null, func3, sdf.parse("15/11/2023"), sdfData.parse("15:00"), pac2, 300.0);
+		Consulta cons2 = new Consulta(null, func3, sdf.parse("15/11/2023"), sdfData.parse("15:00"), pac1, 300.0);
 		
-		ProcedimentoMarcar procMarcar = new ProcedimentoMarcar(null, proced, sdf.parse("29/10/2023"), sdfData.parse("15:00"), pac2, 300.0);
+		ProcedimentoMarcar procMarcar = new ProcedimentoMarcar(null, proced, sdf.parse("15/11/2023"), sdfData.parse("15:00"), pac2, 300.0);
 		
-
-		Laudo laudo1 = new Laudo(null, cons, "teste test teste");
 		
-		consultaRepository.save(cons);
+		consultaRepository.saveAll(Arrays.asList(cons, cons2));
 		procedimentoMarcarRepository.save(procMarcar);
-		laudoRepository.save(laudo1);
+		
 		
 		
 		

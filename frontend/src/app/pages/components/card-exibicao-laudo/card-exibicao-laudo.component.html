@@ -4,6 +4,17 @@
       <h3>LAUDO</h3>
       <hr/>
     </div>
+
+    <div class="btns">
+      <div class="paciente-btns">
+       
+        <div class="btn-paciente-editar">
+          <a (click)="gerarPDF()"><span>GERAR PDF</span></a>
+        </div>
+    
+      </div>
+
+    </div>
   
     <div class="display-selecao-paciente">
   
@@ -15,7 +26,7 @@
         </div>
         <div class="selecao-paciente-nome">
           <h4>CPF: </h4>
-          <p>{{ laudo.consulta.paciente.nome }}</p>
+          <p>{{ laudo.consulta.paciente.cpf }}</p>
         </div>
         <div class="selecao-paciente-nome">
           <h4>Data da Consulta: </h4>
@@ -28,6 +39,8 @@
     
   
       </div>
+
+      
     </div>
   </div>
   

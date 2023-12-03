@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import com.ifba.gestaohospitalar.dto.ProntuarioNewDTO;
 import com.ifba.gestaohospitalar.model.Paciente;
 import com.ifba.gestaohospitalar.model.Prontuario;
-import com.ifba.gestaohospitalar.repository.PacienteRepository;
 import com.ifba.gestaohospitalar.repository.ProntuarioRepository;
 import com.ifba.gestaohospitalar.service.PacienteService;
 import com.ifba.gestaohospitalar.service.ProntuarioService;
@@ -25,8 +24,6 @@ public class ProntuarioServiceImpl implements ProntuarioService {
 	@Autowired
 	private PacienteService pacienteService;
 
-	@Autowired
-	private PacienteRepository pacienteRepository;
 
 	@Override
 	public Prontuario findId(Long id) {

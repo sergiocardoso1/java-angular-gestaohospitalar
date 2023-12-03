@@ -11,24 +11,17 @@ import com.ifba.gestaohospitalar.model.ProcedimentoMarcar;
 public interface MarcarProcedimentoService {
 
 	public ProcedimentoMarcar findId(Long id);
-
 	public List<ProcedimentoMarcar> findAll();
-	
 	public long quantidadeProcedimentosHoje();
-	
-
 	public List<ProcedimentoMarcar> findByDate(String data) throws ParseException;
-
 	public ProcedimentoMarcar insert(ProcedimentoMarcar obj);
-
 	public ProcedimentoMarcar update(ProcedimentoMarcar obj);
-
 	public void delete(Long id);
-
 	public ProcedimentoMarcar fromDTO(ProcedimentoMarcarDTO objDto) throws ParseException;
-
 	public ProcedimentoMarcar fromDTO(ProcedimentoMarcarNewDTO objDto) throws ParseException;
-
 	public List<Date> listDeHorariosNoDia(String data, Long procedimentoId) throws ParseException;
+	public List<String> findProcedimentosMaisFeitosNosUltimos30Dias();
+	public int findQntMes(int mes, int ano);
+	public double valormes(int mes, int ano);
 
 }

@@ -95,5 +95,11 @@ public class ServicoDeProcedimentoController {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@RequestMapping(value = "/procedimentosdomes", method = RequestMethod.GET)
+	public ResponseEntity<List<String>> listEspecialidadesMaisFeitasNosUltimos30Dias() {
+        List<String> procedimentos = service.findProcedimentosMaisFeitosNosUltimos30Dias();
+        return ResponseEntity.ok().body(procedimentos);
+    }
 
 }

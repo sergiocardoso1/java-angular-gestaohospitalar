@@ -9,7 +9,7 @@ export class CardInfoComponent {
   @Input()
   cardImg:string="";
   @Input()
-  cardQtd:string="";
+  cardQtd: string | string[] = "";
   @Input()
   cardText:string="";
 

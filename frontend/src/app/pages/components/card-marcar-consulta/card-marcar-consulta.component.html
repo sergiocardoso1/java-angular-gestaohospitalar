@@ -8,19 +8,22 @@
       </div>
 
     
-
-    <div class="container-box" >
-        <div class="box" *ngFor="let a of funcionarios">
-            <h3>{{a.nome}}</h3>
-            <h3>{{a.especialidade.nome}}</h3>
-            <div class="quebra"></div>
-            <fieldset class="info-horario">
-                <div class="horario" *ngFor="let h of a.horario"> 
-                    <a class="horarios" (click)="selecionarHorario(h,a.id)"><b>{{h}}</b></a>
-                  
-                </div>          
+    <div class="container-max-box">
+        <div class="container-box" >
+            <div class="box" *ngFor="let a of funcionarios">
+                <h3>{{a.nome}}</h3>
+                <h3>{{a.especialidade.nome}}</h3>
+                <div class="quebra"></div>
+                <fieldset class="info-horario">
+                    <div class="horario" *ngFor="let h of a.horario"> 
+                        <a class="horarios" (click)="selecionarHorario(h,a.id)"><b>{{h}}</b></a>
+                      
+                    </div>          
+                    
+                </fieldset>
                 
-            </fieldset>
+            </div>
         </div>
     </div>
+    
 </div>

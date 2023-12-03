@@ -6,6 +6,7 @@ import { estado } from 'src/app/models/estadoModel';
 import { Paciente } from 'src/app/models/pacienteModel';
 import { Prontuario } from 'src/app/models/prontuarioModel';
 import { PacienteService } from 'src/app/services/pacienteService/paciente.service';
+import { PdfService } from 'src/app/services/pdfService/pdf.service';
 
 @Component({
   selector: 'app-card-exibicao-paciente',
@@ -23,7 +24,7 @@ export class CardExibicaoPacienteComponent implements OnInit{
     estado: estado;
   
   
-    constructor(private pacienteService:PacienteService, private route: ActivatedRoute, private router: Router){
+    constructor(private pacienteService:PacienteService, private pdfService:PdfService, private route: ActivatedRoute, private router: Router){
       this.paramValue = this.route.snapshot.paramMap.get('id');
       this.estado = {
         id:0,
@@ -58,7 +59,8 @@ export class CardExibicaoPacienteComponent implements OnInit{
         dataDeNascimento: "",
         telefone: "",
         endereco: this.endereco,
-        prontuario: this.prontuario || null
+        prontuario: this.prontuario || null,
+        informacoesMedicas: ""
       }
   
     }
@@ -93,6 +95,15 @@ export class CardExibicaoPacienteComponent implements OnInit{
       alert("Prontuario ainda não foi cadastrado!"); 
     }
   
+    gerarPDF(){
+      this.pdfService.findPDFByPaciente(this.paramValue).subscribe((pdfBlob: Blob) => {
+        const fileURL = URL.createObjectURL(pdfBlob);
   
+        // Abre o PDF em uma nova aba ou janela
+        window.open(fileURL, '_blank');
+  
+        // Importante: Revogar a URL temporária após algum tempo para liberar recursos do navegador
+        setTimeout(() => URL.revokeObjectURL(fileURL), 100);
+      });
   }
-  
+}

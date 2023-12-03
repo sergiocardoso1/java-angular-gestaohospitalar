@@ -60,6 +60,10 @@ export class ConsultaService  {
     return this.httpClient.delete(`${this.baseURL}${"/"}${id}`)
   }
   
+  findDoMes(): Observable<string[]>{
+    return this.httpClient.get<string[]>(`${this.baseURL}${"/consultasdomes"}`);
+  
+  }
   
   
   

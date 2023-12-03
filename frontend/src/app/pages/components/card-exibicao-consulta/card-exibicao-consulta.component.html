@@ -4,6 +4,27 @@
       <h3>CONSULTA</h3>
       <hr/>
     </div>
+
+    <div class="btns" >
+      <div class="paciente-btns">
+          <div class="btn-paciente-matricula">
+              <a *ngIf="!consulta.paciente.prontuario; then criarBlock else linkBlock"></a>
+            
+              <ng-template #criarBlock>
+                <a (click)="criarProntuario()"><span>PRONTUÁRIO</span></a>
+              </ng-template>
+            
+              <ng-template #linkBlock>
+                <a [routerLink]="['/prontuarios', consulta.paciente.prontuario.id]"><span>PRONTUÁRIO</span></a>
+              </ng-template>
+            </div>
+            
+        <div class="btn-paciente-editar">
+          <a (click)="criarLaudo()"><span>LAUDO</span></a>
+        </div>
+      </div>
+
+    </div>
   
     <div class="display-selecao-paciente" *ngIf="consulta">
   
@@ -42,26 +63,7 @@
         
       </div>
   
-      <div class="btns" >
-        <div class="paciente-btns">
-            <div class="btn-paciente-matricula">
-                <a *ngIf="!consulta.paciente.prontuario; then criarBlock else linkBlock"></a>
-              
-                <ng-template #criarBlock>
-                  <a (click)="criarProntuario()"><span>PRONTUÁRIO</span></a>
-                </ng-template>
-              
-                <ng-template #linkBlock>
-                  <a [routerLink]="['/prontuarios', consulta.paciente.prontuario.id]"><span>PRONTUÁRIO</span></a>
-                </ng-template>
-              </div>
-              
-          <div class="btn-paciente-editar">
-            <a (click)="criarLaudo()"><span>LAUDO</span></a>
-          </div>
-        </div>
-  
-      </div>
+    
     </div>
   </div>
   

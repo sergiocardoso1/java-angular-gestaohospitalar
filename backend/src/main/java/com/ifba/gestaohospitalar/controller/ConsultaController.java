@@ -101,5 +101,11 @@ public class ConsultaController {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@RequestMapping(value = "/consultasdomes", method = RequestMethod.GET)
+	public ResponseEntity<List<String>> listEspecialidadesMaisFeitasNosUltimos30Dias() {
+        List<String> especialidades = service.findEspecialidadesMaisFeitasNosUltimos30Dias();
+        return ResponseEntity.ok().body(especialidades);
+    }
 
 }

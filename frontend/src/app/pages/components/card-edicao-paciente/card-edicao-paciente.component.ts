@@ -29,6 +29,7 @@ export class CardEdicaoPacienteComponent implements OnInit{
   logradouro:string = '';
   complemento:string = '';
   numero:string = '';
+  informacoesMedicas:string = '';
 
 
 
@@ -59,6 +60,7 @@ export class CardEdicaoPacienteComponent implements OnInit{
       this.bairro = data.endereco.bairro;
       this.cidade = data.endereco.cidade.nome;
       this.estado = data.endereco.cidade.estado.nome;
+      this.informacoesMedicas = data.informacoesMedicas;
 
     });
 
@@ -120,6 +122,7 @@ export class CardEdicaoPacienteComponent implements OnInit{
         logradouro: this.logradouro,
         numero: this.numero,
         telefone: this.telefone,
+        informacoesMedicas: this.informacoesMedicas
       }
       this.pacienteService.update(objDto, this.id).subscribe(
         response => {

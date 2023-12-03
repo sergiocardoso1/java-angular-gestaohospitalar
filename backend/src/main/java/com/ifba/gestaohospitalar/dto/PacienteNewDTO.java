@@ -33,7 +33,9 @@ public class PacienteNewDTO {
 	private String cidade;
 	@NotEmpty
 	private String estado;
-
+	
+	private String informacoesMedicas;
+	
 	public PacienteNewDTO() {
 
 	}
@@ -87,11 +89,11 @@ public class PacienteNewDTO {
 	}
 
 	public String getLogradouro() {
-	    return logradouro;
+		return logradouro;
 	}
 
 	public void setLogradouro(String logradouro) {
-	    this.logradouro = logradouro;
+		this.logradouro = logradouro;
 	}
 
 	public String getNumero() {
@@ -142,7 +144,12 @@ public class PacienteNewDTO {
 		this.estado = estado;
 	}
 
-	
-	
+	public String getInformacoesMedicas() {
+		return informacoesMedicas;
+	}
+
+	public void setInformacoesMedicas(String informacoesMedicas) {
+		this.informacoesMedicas = informacoesMedicas;
+	}
 
 }

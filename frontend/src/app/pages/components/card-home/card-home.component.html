@@ -1,7 +1,7 @@
 <div class="card-home-container">
   <div class="card-home">
     <div class="card-home-nome-empresa">
-      <h2>{{ title }}</h2>
+      <h2>{{ title }} - {{ formattedDate }} </h2>
     </div>
 
     <div class="card-home-hr">
@@ -13,6 +13,8 @@
       <app-card-info [cardQtd]="procedimentos" cardText="Procedimentos" [routerLink]="['/procedimentos']"></app-card-info>
       <app-card-info [cardQtd]="consultasHoje" cardText="Consultas hoje" [routerLink]="['/verificarconsulta']"></app-card-info>
       <app-card-info [cardQtd]="procedimentosHoje" cardText="Procedimentos hoje" [routerLink]="['/verificarprocedimento']"></app-card-info>
+      <app-card-info [cardQtd]="consultasDoMes" cardText="Consultas do mês" ></app-card-info>
+      <app-card-info [cardQtd]="procedimentosDoMes" cardText="Procedimentos do mês" ></app-card-info>
     </div>
   </div>
 

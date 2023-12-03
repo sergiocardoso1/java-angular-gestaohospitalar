@@ -32,6 +32,9 @@ public class PacienteDTO {
 	private String cidade;
 	@NotEmpty
 	private String estado;
+	
+	private String informacoesMedicas;
+	
 
 	public PacienteDTO() {
 
@@ -139,6 +142,14 @@ public class PacienteDTO {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+
+	public String getInformacoesMedicas() {
+		return informacoesMedicas;
+	}
+
+	public void setInformacoesMedicas(String informacoesMedicas) {
+		this.informacoesMedicas = informacoesMedicas;
 	}
 
 }

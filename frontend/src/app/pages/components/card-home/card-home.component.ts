@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { ConsultaService } from 'src/app/services/consultaService/consulta.service';
 import { PacienteService } from 'src/app/services/pacienteService/paciente.service';
@@ -11,11 +12,15 @@ import { ServicoProcedimentoService } from 'src/app/services/servicoProcedimento
   styleUrls: ['./card-home.component.css']
 })
 export class CardHomeComponent {
-  title:string = "";
+  title:string = "CLILIFE";
   pacientes:string = "";
   procedimentos:string = "";
   procedimentosHoje:string = "";
   consultasHoje:string = "";
+  consultasDoMes:string[] = [];
+  procedimentosDoMes:string[] = [];
+  currentDate: Date = new Date();
+  datePipe: DatePipe = new DatePipe('en-US');
 
   constructor(private pacienteService:PacienteService, private procedimentoService:ProcedimentoService, private servicoProcedimentoService:ServicoProcedimentoService,
   private consultaService:ConsultaService){
@@ -31,6 +36,16 @@ export class CardHomeComponent {
     this.consultaService.findQuantidadeHoje().subscribe(data =>{
       this.consultasHoje = data.toString();
     });
+
+    this.consultaService.findDoMes().subscribe(data => {
+      this.consultasDoMes = data;
+    })
+
+    this.servicoProcedimentoService.findDoMes().subscribe(data => {
+      this.procedimentosDoMes = data;
+    })
   }
+  formattedDate: string | null = this.datePipe.transform(this.currentDate, 'dd/MM/yyyy') || null;
+
 
 }
